@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="Aclara:UFx:BillModel" xmlns:q1="Aclara:UFx:CommonWDS" xmlns:q2="Aclara:UFx:CommonWDS" xmlns:q3="Aclara:UFx:CommonWDS" xmlns:q4="Aclara:UFx:CommonWDS" xmlns:q5="Aclara:UFx:CommonWDS" xmlns:q6="Aclara:UFx:CommonWDS" xmlns:q7="Aclara:UFx:CommonWDS" xmlns:q8="Aclara:UFx:CommonWDS" xmlns:q9="Aclara:UFx:CommonWDS" xmlns:q10="http://schemas.datacontract.org/2004/07/System.Collections.Specialized" xmlns:q11="Aclara:UFx:CommonWDS" xmlns:q12="Aclara:UFx:CommonWDS" xmlns:q13="Aclara:UFx:CommonWDS" xmlns:q14="Aclara:UFx:CommonWDS" targetNamespace="Aclara:UFx:BillModel" elementFormDefault="qualified">
+	<xs:import namespace="Aclara:UFx:CommonWDS" schemaLocation="http://ns.sempra.com/scg/ws/Aclara/MobileEP/Bill/XSD/Billxsd2.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="http://ns.sempra.com/scg/ws/Aclara/MobileEP/Bill/XSD/Billxsd1.xsd"/>
+	<xs:import namespace="http://schemas.datacontract.org/2004/07/System.Collections.Specialized" schemaLocation="http://ns.sempra.com/scg/ws/Aclara/MobileEP/Bill/XSD/Billxsd3.xsd"/>
+	<xs:element name="GetBillHighlights">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="request" type="tns:BillHighlightRequest" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BillHighlightRequest" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="q1:BaseRequest">
+				<xs:sequence>
+					<xs:element name="AccountID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="ComparedBillDate" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="CustomerID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="PremiseID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="ProfileLevel1Optional" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="ReferrerID" type="xs:int" minOccurs="0"/>
+					<xs:element name="SelectedBillDate" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="ValidateUserOptional" type="xs:boolean" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BillHighlightRequest" type="tns:BillHighlightRequest" nillable="true"/>
+	<xs:element name="GetBillHighlightsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="GetBillHighlightsResult" type="tns:BillHighlightData" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BillHighlightData" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="q2:BaseResponse">
+				<xs:sequence>
+					<xs:element name="AccountID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="BillHighlights" type="tns:ArrayOfBillHighlight" nillable="true" minOccurs="0"/>
+					<xs:element name="ComparedBillDate" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="CustomerID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="PremiseID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="ProfileLevel1Optional" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="ReferrerID" type="xs:int" minOccurs="0"/>
+					<xs:element name="SelectedBillDate" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="ValidateUserOptional" type="xs:boolean" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BillHighlightData" type="tns:BillHighlightData" nillable="true"/>
+	<xs:complexType name="ArrayOfBillHighlight">
+		<xs:sequence>
+			<xs:element name="BillHighlight" type="tns:BillHighlight" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfBillHighlight" type="tns:ArrayOfBillHighlight" nillable="true"/>
+	<xs:complexType name="BillHighlight">
+		<xs:sequence>
+			<xs:element name="BillHighlightType" type="tns:BillHighlightType"/>
+			<xs:element name="Detail" type="tns:Detail" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="BillHighlight" type="tns:BillHighlight" nillable="true"/>
+	<xs:simpleType name="BillHighlightType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unspecified"/>
+			<xs:enumeration value="BillingPeriod"/>
+			<xs:enumeration value="BalancedBilling"/>
+			<xs:enumeration value="BalancedBillingAmountChange"/>
+			<xs:enumeration value="BalancedBillingTrueUp"/>
+			<xs:enumeration value="EnergyCharges"/>
+			<xs:enumeration value="EstimatedReading"/>
+			<xs:enumeration value="MaxDemand"/>
+			<xs:enumeration value="OtherCharges"/>
+			<xs:enumeration value="OtherServiceCharges"/>
+			<xs:enumeration value="PastDue"/>
+			<xs:enumeration value="RateChange"/>
+			<xs:enumeration value="RateClassChange"/>
+			<xs:enumeration value="TOUUsage"/>
+			<xs:enumeration value="UsageCharges"/>
+			<xs:enumeration value="WeatherChange"/>
+			<xs:enumeration value="WeatherNormalizationAdj"/>
+			<xs:enumeration value="UnavailableRateClass"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="BillHighlightType" type="tns:BillHighlightType" nillable="true"/>
+	<xs:complexType name="Detail">
+		<xs:sequence>
+			<xs:element name="Context" type="tns:BillHighlightContextType" minOccurs="0"/>
+			<xs:element name="Fuel" type="q3:FuelType" minOccurs="0"/>
+			<xs:element name="Impact" type="tns:Impact" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Detail" type="tns:Detail" nillable="true"/>
+	<xs:simpleType name="BillHighlightContextType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unspecified"/>
+			<xs:enumeration value="Bill"/>
+			<xs:enumeration value="Fuel"/>
+			<xs:enumeration value="Meter"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="BillHighlightContextType" type="tns:BillHighlightContextType" nillable="true"/>
+	<xs:complexType name="Impact">
+		<xs:sequence>
+			<xs:element name="AmountCurrency" type="xs:double" minOccurs="0"/>
+			<xs:element name="AmountPercent" type="xs:double" minOccurs="0"/>
+			<xs:element name="HasAmountCurrency" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="HasAmountPercent" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="HasMeterID" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="HasRateClass" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="HasReadingType" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="ImpactType" type="tns:BillHighlightImpactType" minOccurs="0"/>
+			<xs:element name="MeterID" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="RateClass" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="ReadingType" type="tns:BillHighlightReadingType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Impact" type="tns:Impact" nillable="true"/>
+	<xs:simpleType name="BillHighlightImpactType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unspecified"/>
+			<xs:enumeration value="Higher"/>
+			<xs:enumeration value="Lower"/>
+			<xs:enumeration value="NonQuantitative"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="BillHighlightImpactType" type="tns:BillHighlightImpactType" nillable="true"/>
+	<xs:simpleType name="BillHighlightReadingType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unspecified"/>
+			<xs:enumeration value="Adjusted"/>
+			<xs:enumeration value="Estimated"/>
+			<xs:enumeration value="TrueUp"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="BillHighlightReadingType" type="tns:BillHighlightReadingType" nillable="true"/>
+	<xs:element name="UploadBillData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="request" type="tns:UploadBillDataRequest" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="UploadBillDataRequest" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="q4:BaseRequest">
+				<xs:sequence>
+					<xs:element name="BillXML" nillable="true" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:any processContents="lax" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="CustomerID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="ReferrerID" type="xs:int" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- 
+	<xs:element name="UploadBillDataRequest" type="tns:UploadBillDataRequest" nillable="true"/>
+	 -->
+	<xs:element name="UploadBillDataResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="UploadBillDataResult" type="tns:BillDataStatus" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BillDataStatus" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="q5:BaseResponse">
+				<xs:sequence>
+					<xs:element name="CustomerID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="LastUpdated" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="ReferrerID" type="xs:int" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BillDataStatus" type="tns:BillDataStatus" nillable="true"/>
+	<xs:element name="GetBillDataStatus">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="request" type="tns:BillDataStatusRequest" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BillDataStatusRequest" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="q6:BaseRequest">
+				<xs:sequence>
+					<xs:element name="CustomerID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="ReferrerID" type="xs:int" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BillDataStatusRequest" type="tns:BillDataStatusRequest" nillable="true"/>
+	<xs:element name="GetBillDataStatusResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="GetBillDataStatusResult" type="tns:BillDataStatus" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetBillToDate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="request" type="tns:BillToDateRequest" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BillToDateRequest" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="q7:BaseRequest">
+				<xs:sequence>
+					<xs:element name="Bill" type="tns:Bill" nillable="true" minOccurs="0"/>
+					<xs:element name="BillToDateSettings" type="tns:BillToDateSettings" nillable="true" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BillToDateRequest" type="tns:BillToDateRequest" nillable="true"/>
+	<xs:complexType name="Bill">
+		<xs:sequence>
+			<xs:element name="AccountID" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="CustomerID" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="Datestamp" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="MeteredServices" type="tns:MeteredServiceList" nillable="true" minOccurs="0"/>
+			<xs:element name="NonMeteredServices" type="tns:NonMeteredServiceList" nillable="true" minOccurs="0"/>
+			<xs:element name="ReferrerID" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Bill" type="tns:Bill" nillable="true"/>
+	<xs:complexType name="MeteredServiceList">
+		<xs:sequence>
+			<xs:element name="MeteredService" type="tns:MeteredService" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MeteredServiceList" type="tns:MeteredServiceList" nillable="true"/>
+	<xs:complexType name="MeteredService">
+		<xs:sequence>
+			<xs:element name="Fuel" type="q8:FuelType" minOccurs="0"/>
+			<xs:element name="Meters" type="tns:MeterList" nillable="true" minOccurs="0"/>
+			<xs:element name="PremiseID" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="ServiceID" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MeteredService" type="tns:MeteredService" nillable="true"/>
+	<xs:complexType name="MeterList">
+		<xs:sequence>
+			<xs:element name="Meter" type="tns:Meter" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MeterList" type="tns:MeterList" nillable="true"/>
+	<xs:complexType name="Meter">
+		<xs:sequence>
+			<xs:element name="CostToDateResult" type="tns:CostToDate" nillable="true" minOccurs="0"/>
+			<xs:element name="DerivedFuel" type="tns:DerivedFuelType" minOccurs="0"/>
+			<xs:element name="DerivedFuelIsPrimary" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="EndDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="Fuel" type="q9:FuelType" minOccurs="0"/>
+			<xs:element name="MaximumDerivedUsage" type="xs:double" minOccurs="0"/>
+			<xs:element name="MeterID" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="PrimaryUnitOfMeasure" type="tns:UnitOfMeasureType" minOccurs="0"/>
+			<xs:element name="ProjectedEndDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="RateClass" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="RateClass2" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="RateCompanyID" type="xs:int" minOccurs="0"/>
+			<xs:element name="Readings" type="tns:ArrayOfReading" nillable="true" minOccurs="0"/>
+			<xs:element name="ServiceID" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="StartDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="UsageConversionFactor" type="xs:double" minOccurs="0"/>
+			<xs:element name="Usages" type="tns:ArrayOfUsage" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Meter" type="tns:Meter" nillable="true"/>
+	<xs:complexType name="CostToDate">
+		<xs:sequence>
+			<xs:element name="AverageDailyCost" type="xs:double" minOccurs="0"/>
+			<xs:element name="Cost" type="xs:double" minOccurs="0"/>
+			<xs:element name="EndDate" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="ErrCode" type="tns:ErrorCode" minOccurs="0"/>
+			<xs:element name="LastReadingDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="MinimumCostsApplied" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="MonthProrateFactorUsed" type="xs:double" minOccurs="0"/>
+			<xs:element name="NumberOfDaysInCostToDate" type="xs:int" minOccurs="0"/>
+			<xs:element name="NumberOfDaysInProjectedCost" type="xs:int" minOccurs="0"/>
+			<xs:element name="ProjectedCost" type="xs:double" minOccurs="0"/>
+			<xs:element name="ProjectedEndDate" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="StartDate" type="xs:dateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CostToDate" type="tns:CostToDate" nillable="true"/>
+	<xs:simpleType name="ErrorCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NoError"/>
+			<xs:enumeration value="ErrGeneric"/>
+			<xs:enumeration value="ErrTOUComplex"/>
+			<xs:enumeration value="ErrAllReadingsNotProvidedForRTP"/>
+			<xs:enumeration value="ErrUnsupportedComplexTieredTOU"/>
+			<xs:enumeration value="ErrUnsupportedCalculation"/>
+			<xs:enumeration value="ErrRateDefinitionsNotFound"/>
+			<xs:enumeration value="ErrMinimumBillDaysNotMet"/>
+			<xs:enumeration value="ErrMinimumUsageNotMet"/>
+			<xs:enumeration value="ErrMaximumMissingDaysMet"/>
+			<xs:enumeration value="ErrUnsupportedMultipleMetersInService"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ErrorCode" type="tns:ErrorCode" nillable="true"/>
+	<xs:simpleType name="DerivedFuelType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="undefined"/>
+			<xs:enumeration value="sewer"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="DerivedFuelType" type="tns:DerivedFuelType" nillable="true"/>
+	<xs:simpleType name="UnitOfMeasureType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="undefined"/>
+			<xs:enumeration value="kWh"/>
+			<xs:enumeration value="kW"/>
+			<xs:enumeration value="Therm"/>
+			<xs:enumeration value="CCF"/>
+			<xs:enumeration value="MCF"/>
+			<xs:enumeration value="CF"/>
+			<xs:enumeration value="M3"/>
+			<xs:enumeration value="gal"/>
+			<xs:enumeration value="CGal"/>
+			<xs:enumeration value="kGal"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="UnitOfMeasureType" type="tns:UnitOfMeasureType" nillable="true"/>
+	<xs:complexType name="ArrayOfReading">
+		<xs:sequence>
+			<xs:element name="Reading" type="tns:Reading" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfReading" type="tns:ArrayOfReading" nillable="true"/>
+	<xs:complexType name="Reading">
+		<xs:sequence>
+			<xs:element name="BaseOrTier" type="tns:BaseOrTier" minOccurs="0"/>
+			<xs:element name="IsEmpty" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Quantity" type="xs:double" minOccurs="0"/>
+			<xs:element name="Season" type="tns:Season" minOccurs="0"/>
+			<xs:element name="TimeOfUse" type="tns:TimeOfUse" minOccurs="0"/>
+			<xs:element name="Timestamp" type="xs:dateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Reading" type="tns:Reading" nillable="true"/>
+	<xs:simpleType name="BaseOrTier">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Undefined"/>
+			<xs:enumeration value="Tier1"/>
+			<xs:enumeration value="Tier2"/>
+			<xs:enumeration value="Tier3"/>
+			<xs:enumeration value="Tier4"/>
+			<xs:enumeration value="Tier5"/>
+			<xs:enumeration value="Tier6"/>
+			<xs:enumeration value="TotalServiceUse">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Demand">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DemandBill">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="BaseOrTier" type="tns:BaseOrTier" nillable="true"/>
+	<xs:simpleType name="Season">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Undefined"/>
+			<xs:enumeration value="Summer"/>
+			<xs:enumeration value="Winter"/>
+			<xs:enumeration value="SeasonA"/>
+			<xs:enumeration value="SeasonB"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Season" type="tns:Season" nillable="true"/>
+	<xs:simpleType name="TimeOfUse">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Undefined"/>
+			<xs:enumeration value="OnPeak"/>
+			<xs:enumeration value="OffPeak"/>
+			<xs:enumeration value="Shoulder1"/>
+			<xs:enumeration value="Shoulder2"/>
+			<xs:enumeration value="CriticalPeak"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="TimeOfUse" type="tns:TimeOfUse" nillable="true"/>
+	<xs:complexType name="ArrayOfUsage">
+		<xs:sequence>
+			<xs:element name="Usage" type="tns:Usage" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfUsage" type="tns:ArrayOfUsage" nillable="true"/>
+	<xs:complexType name="Usage">
+		<xs:sequence>
+			<xs:element name="BaseOrTier" type="tns:BaseOrTier" minOccurs="0"/>
+			<xs:element name="NumberDaysMissingReadings" type="xs:int" minOccurs="0"/>
+			<xs:element name="Quantity" type="xs:double" minOccurs="0"/>
+			<xs:element name="Readings" type="tns:ArrayOfReading" nillable="true" minOccurs="0"/>
+			<xs:element name="Season" type="tns:Season" minOccurs="0"/>
+			<xs:element name="TimeOfUse" type="tns:TimeOfUse" minOccurs="0"/>
+			<xs:element name="UsageDate" type="xs:dateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Usage" type="tns:Usage" nillable="true"/>
+	<xs:complexType name="NonMeteredServiceList">
+		<xs:sequence>
+			<xs:element name="NonMeteredService" type="tns:NonMeteredService" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="NonMeteredServiceList" type="tns:NonMeteredServiceList" nillable="true"/>
+	<xs:complexType name="NonMeteredService">
+		<xs:sequence>
+			<xs:element name="Amount" type="xs:double" minOccurs="0"/>
+			<xs:element name="CostToDateResult" type="tns:NonMeteredServiceResult" nillable="true" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="EndDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="Name" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="ProjectedEndDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="StartDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="NonMeteredService" type="tns:NonMeteredService" nillable="true"/>
+	<xs:complexType name="NonMeteredServiceResult">
+		<xs:sequence>
+			<xs:element name="AverageDailyCost" type="xs:double" minOccurs="0"/>
+			<xs:element name="Cost" type="xs:double" minOccurs="0"/>
+			<xs:element name="EndDate" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="MonthProrateFactorUsed" type="xs:double" minOccurs="0"/>
+			<xs:element name="NumberOfDaysInCostToDate" type="xs:int" minOccurs="0"/>
+			<xs:element name="NumberOfDaysInProjectedCost" type="xs:int" minOccurs="0"/>
+			<xs:element name="ProjectedCost" type="xs:double" minOccurs="0"/>
+			<xs:element name="ProjectedEndDate" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="StartDate" type="xs:dateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="NonMeteredServiceResult" type="tns:NonMeteredServiceResult" nillable="true"/>
+	<xs:complexType name="BillToDateSettings">
+		<xs:sequence>
+			<xs:element name="Settings" type="tns:CostToDateSettings" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="BillToDateSettings" type="tns:BillToDateSettings" nillable="true"/>
+	<xs:complexType name="CostToDateSettings">
+		<xs:sequence>
+			<xs:element name="General" type="tns:GeneralGroup" nillable="true" minOccurs="0"/>
+			<xs:element name="Sewer" type="tns:SewerGroup" nillable="true" minOccurs="0"/>
+			<xs:element name="Validate" type="tns:ValidateGroup" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CostToDateSettings" type="tns:CostToDateSettings" nillable="true"/>
+	<xs:complexType name="GeneralGroup">
+		<xs:sequence>
+			<xs:element name="AdditionalSettings" type="q10:NameValueCollection" nillable="true" minOccurs="0"/>
+			<xs:element name="AllowMultipleMetersPerService" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="ConversionFactorForGas" type="xs:double" minOccurs="0"/>
+			<xs:element name="MinimumChargeType" type="tns:MinimumChargeType" minOccurs="0"/>
+			<xs:element name="ProjectedNumberOfDays" type="xs:int" minOccurs="0"/>
+			<xs:element name="ProrateDemandUsageDeterminants" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="ProrateMonthlyServiceCharges" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="SmoothTiers" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="UseConversionFactorForGas" type="xs:boolean" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="GeneralGroup" type="tns:GeneralGroup" nillable="true"/>
+	<xs:simpleType name="MinimumChargeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NoMinimumCharge"/>
+			<xs:enumeration value="ProrateMinimumCharge"/>
+			<xs:enumeration value="NoProrateMinimumCharge"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="MinimumChargeType" type="tns:MinimumChargeType" nillable="true"/>
+	<xs:complexType name="SewerGroup">
+		<xs:sequence>
+			<xs:element name="ProrateSewerMaximumMonthsUsageDeterminants" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="SewerMaximumMonthsUsageForCommercial" type="xs:int" minOccurs="0"/>
+			<xs:element name="SewerMaximumMonthsUsageForResidential" type="xs:int" minOccurs="0"/>
+			<xs:element name="UseSewerMaximumMonthsUsageForCommercial" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="UseSewerMaximumMonthsUsageForResidential" type="xs:boolean" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SewerGroup" type="tns:SewerGroup" nillable="true"/>
+	<xs:complexType name="ValidateGroup">
+		<xs:sequence>
+			<xs:element name="CheckDaysInFullMonth" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="CheckMaximumMissingDays" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="CheckMinimumBillDays" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="CheckMinimumUsage" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="DaysInFullMonth" type="xs:int" minOccurs="0"/>
+			<xs:element name="MaximumMissingDays" type="xs:int" minOccurs="0"/>
+			<xs:element name="MinimumBillDaysElectric" type="xs:int" minOccurs="0"/>
+			<xs:element name="MinimumBillDaysGas" type="xs:int" minOccurs="0"/>
+			<xs:element name="MinimumBillDaysWater" type="xs:int" minOccurs="0"/>
+			<xs:element name="MinimumUsage" type="xs:double" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ValidateGroup" type="tns:ValidateGroup" nillable="true"/>
+	<xs:element name="GetBillToDateResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="GetBillToDateResult" type="tns:BillToDateData" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BillToDateData" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="q11:BaseResponse">
+				<xs:sequence>
+					<xs:element name="Bill" type="tns:Bill" nillable="true" minOccurs="0"/>
+					<xs:element name="TotalCost" type="xs:double" minOccurs="0"/>
+					<xs:element name="TotalProjectedCost" type="xs:double" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BillToDateData" type="tns:BillToDateData" nillable="true"/>
+	<xs:element name="GetBillToDatePull">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="request" type="tns:BillToDatePullRequest" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BillToDatePullRequest" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="q12:BaseRequest">
+				<xs:sequence>
+					<xs:element name="AccountID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="CustomerID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="ReferrerID" type="xs:int" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BillToDatePullRequest" type="tns:BillToDatePullRequest" nillable="true"/>
+	<xs:element name="GetBillToDatePullResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="GetBillToDatePullResult" type="tns:BillToDateData" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetBillSummary">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="request" type="tns:BillSummaryRequest" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BillSummaryRequest" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="q13:BaseRequest">
+				<xs:sequence>
+					<xs:element name="AccountID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="BillCount" type="xs:int" nillable="true" minOccurs="0"/>
+					<xs:element name="CustomerID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="ReferrerID" type="xs:int" minOccurs="0"/>
+					<xs:element name="SelectedBillDate" type="xs:string" nillable="true" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BillSummaryRequest" type="tns:BillSummaryRequest" nillable="true"/>
+	<xs:element name="GetBillSummaryResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="GetBillSummaryResult" type="tns:BillSummaryData" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BillSummaryData" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="q14:BaseResponse">
+				<xs:sequence>
+					<xs:element name="AccountID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="BillCount" type="xs:int" nillable="true" minOccurs="0"/>
+					<xs:element name="BillSummaries" type="tns:ArrayOfBillSummary" nillable="true" minOccurs="0"/>
+					<xs:element name="CustomerID" type="xs:string" nillable="true" minOccurs="0"/>
+					<xs:element name="ReferrerID" type="xs:int" minOccurs="0"/>
+					<xs:element name="SelectedBillDate" type="xs:string" nillable="true" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BillSummaryData" type="tns:BillSummaryData" nillable="true"/>
+	<xs:complexType name="ArrayOfBillSummary">
+		<xs:sequence>
+			<xs:element name="BillSummary" type="tns:BillSummary" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfBillSummary" type="tns:ArrayOfBillSummary" nillable="true"/>
+	<xs:complexType name="BillSummary">
+		<xs:sequence>
+			<xs:element name="AmountDue" type="xs:double" nillable="true" minOccurs="0"/>
+			<xs:element name="BillDate" type="xs:dateTime"/>
+			<xs:element name="DueDate" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="LastPaymentAmount" type="xs:double" nillable="true" minOccurs="0"/>
+			<xs:element name="PremiseSummaries" type="tns:ArrayOfPremiseSummary" nillable="true" minOccurs="0"/>
+			<xs:element name="PreviousBillBalanceAmount" type="xs:double" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="BillSummary" type="tns:BillSummary" nillable="true"/>
+	<xs:complexType name="ArrayOfPremiseSummary">
+		<xs:sequence>
+			<xs:element name="PremiseSummary" type="tns:PremiseSummary" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfPremiseSummary" type="tns:ArrayOfPremiseSummary" nillable="true"/>
+	<xs:complexType name="PremiseSummary">
+		<xs:sequence>
+			<xs:element name="Address" type="tns:Address" nillable="true" minOccurs="0"/>
+			<xs:element name="PremiseID" type="xs:string" nillable="true"/>
+			<xs:element name="ServiceSummaries" type="tns:ArrayOfServiceSummary" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PremiseSummary" type="tns:PremiseSummary" nillable="true"/>
+	<xs:complexType name="Address">
+		<xs:sequence>
+			<xs:element name="Address1" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="Address2" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="City" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="FirstName" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="LastName" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="State" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="Zip" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Address" type="tns:Address" nillable="true"/>
+	<xs:complexType name="ArrayOfServiceSummary">
+		<xs:sequence>
+			<xs:element name="ServiceSummary" type="tns:ServiceSummary" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfServiceSummary" type="tns:ArrayOfServiceSummary" nillable="true"/>
+	<xs:complexType name="ServiceSummary">
+		<xs:sequence>
+			<xs:element name="AccountType" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="Fuel" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="MeterSummaries" type="tns:ArrayOfMeterSummary" nillable="true" minOccurs="0"/>
+			<xs:element name="ServiceID" type="xs:string" nillable="true"/>
+			<xs:element name="TotalServiceAmount" type="xs:double" minOccurs="0"/>
+			<xs:element name="TotalServiceUse" type="xs:double" minOccurs="0"/>
+			<xs:element name="Units" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ServiceSummary" type="tns:ServiceSummary" nillable="true"/>
+	<xs:complexType name="ArrayOfMeterSummary">
+		<xs:sequence>
+			<xs:element name="MeterSummary" type="tns:MeterSummary" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfMeterSummary" type="tns:ArrayOfMeterSummary" nillable="true"/>
+	<xs:complexType name="MeterSummary">
+		<xs:sequence>
+			<xs:element name="MeterID" type="xs:string" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MeterSummary" type="tns:MeterSummary" nillable="true"/>
+</xs:schema>

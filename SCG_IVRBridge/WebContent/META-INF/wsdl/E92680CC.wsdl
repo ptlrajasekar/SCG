@@ -1,0 +1,287 @@
+<wsdl:definitions name="E92680CC" targetNamespace="file://target.files" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="file://target.files" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://ns.sempra.com/OpEx/CC/eServices/MemoPost/Request/1.0" xmlns:xsd2="http://ns.sempra.com/OpEx/CC/eServices/MemoPost/Response/1.0">
+  <wsdl:types>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/MemoPost/Request/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/MemoPost/Request/1.0">
+      <complexType name="REQUEST">
+        <sequence>
+          <element form="qualified" name="memoPostRequest" type="cbl:memoPostRequest"/>
+        </sequence>
+      </complexType>
+      <complexType name="memoPostRequest">
+        <sequence>
+          <element form="qualified" name="reqOperationCd">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="-9999"/>
+                <maxInclusive value="9999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="databaseName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="billAccountId">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="externalId">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="18"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="transmissionId">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="999999999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="pymtAmt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="transType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="pymtDayTime">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="26"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="channelType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="3"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="tenderType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="3"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="pymtType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="confirmNbr">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="REQUEST" type="cbl:REQUEST">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">10.0.4.V20121117_0230</documentation>
+        </annotation>
+      </element>
+    </schema>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/MemoPost/Response/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/MemoPost/Response/1.0">
+      <complexType name="RESPONSE">
+        <sequence>
+          <element form="qualified" name="memoPostResponse" type="cbl:memoPostResponse"/>
+        </sequence>
+      </complexType>
+      <complexType name="memoPostResponse">
+        <sequence>
+          <element form="qualified" name="respOperationCd">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="-9999"/>
+                <maxInclusive value="9999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="returnCd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="reasonCode">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="5"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="errorMsg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="100"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="respBillAccountId">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="respExternalId">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="18"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="respTransmissionId">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="999999999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="RESPONSE" type="cbl:RESPONSE">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">10.0.4.V20121117_0230</documentation>
+        </annotation>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="createMemoPostRequest">
+    <wsdl:part element="xsd1:REQUEST" name="REQUESTPart"/>
+  </wsdl:message>
+  <wsdl:message name="createMemoPostResponse">
+    <wsdl:part element="xsd2:RESPONSE" name="RESPONSEPart"/>
+  </wsdl:message>
+  <wsdl:portType name="E92680CCPortType">
+    <wsdl:operation name="createMemoPost">
+      <wsdl:input message="tns:createMemoPostRequest" name="createMemoPostRequest"/>
+      <wsdl:output message="tns:createMemoPostResponse" name="createMemoPostResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="E92680CCBinding" type="tns:E92680CCPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createMemoPost">
+      <soap:operation soapAction="urn:E92680CC" style="document"/>
+      <wsdl:input name="createMemoPostRequest">
+        <soap:body parts="REQUESTPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createMemoPostResponse">
+        <soap:body parts="RESPONSEPart" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="createMemoPost">
+    <wsdl:port binding="tns:E92680CCBinding" name="E92680CCPort">
+      <soap:address location="https://soagwd.sempra.com/OpEx/CC/eServices/CreatePaymentMemoPost/1.0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

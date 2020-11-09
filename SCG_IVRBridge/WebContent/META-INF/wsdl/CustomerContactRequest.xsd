@@ -1,0 +1,60 @@
+<xs:schema
+	xmlns:emf="http://ns.sempra.com/im/BusinessTechnology/Common/EMFSchemaV2"
+	xmlns:tns="http://ns.sempra.com/im/BusinessTechnology/Common/CustomerContact/ContactRequest/ContactRequestV1"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified"
+	elementFormDefault="qualified"
+	targetNamespace="http://ns.sempra.com/im/BusinessTechnology/Common/CustomerContact/ContactRequest/ContactRequestV1"
+	version="1.1">
+	<xs:import
+		namespace="http://ns.sempra.com/im/BusinessTechnology/Common/EMFSchemaV2"
+		schemaLocation="./EMFSchemaV2.xsd" />
+	<xs:element name="MessagePayload" type="tns:MessagePayload" />
+	<xs:complexType name="DynamicProperties">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0"
+				name="dynamicProperty" type="tns:DynamicProperty" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DynamicProperty">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				This element can be used to send the dynamic fields for replacing the
+				place holders in the email template.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="propertyKey" type="xs:string" />
+			<xs:element name="propertyValue" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EmailInfo">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				Provide the From Address, To Address and Subject Line
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="to" type="xs:string" />
+			<xs:element minOccurs="0" name="from" type="xs:string" />
+			<xs:element name="subject" type="xs:string" />
+			<xs:element minOccurs="0" name="cc" type="xs:string" />
+			<xs:element minOccurs="0" name="bcc" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MessagePayload">
+		<xs:sequence>
+			<xs:element name="dynamicProperties" type="tns:DynamicProperties" />
+			<xs:element name="emailInfo" type="tns:EmailInfo" />
+			<xs:element name="templateId" nillable="false" type="xs:string" />
+			<xs:element minOccurs="0" name="promotionId" type="xs:string" />
+			<xs:element minOccurs="0" name="customActionId" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CustomerContactRequestMessage" type="tns:CustomerContactRequestMessage" />
+	<xs:complexType name="CustomerContactRequestMessage">
+		<xs:sequence>
+			<xs:element name="MessagePayload" type="tns:MessagePayload" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

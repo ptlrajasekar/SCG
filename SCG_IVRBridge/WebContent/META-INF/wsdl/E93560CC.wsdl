@@ -1,0 +1,282 @@
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="file://target.files"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsd1="http://ns.sempra.com/OpEx/CC/eServices/getLinkedAccount/Request/1.0"
+	xmlns:xsd2="http://ns.sempra.com/OpEx/CC/eServices/getLinkedAccount/Response/1.0"
+	name="E93560CC" targetNamespace="file://target.files">
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema"
+			xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/getLinkedAccount/Request/1.0"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/getLinkedAccount/Request/1.0">
+			<complexType name="LinkedAccountRequest">
+				<sequence>
+					<element form="qualified" name="processCode">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="4" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" name="db2CollName">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="8" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" name="cisVersion">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="8" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" name="wacID">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="10" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+				</sequence>
+			</complexType>
+			<element name="RequestMessage" type="cbl:LinkedAccountRequest">
+				<annotation>
+					<documentation source="com.ibm.etools.xmlent.batch">8.1.0.V200810141930
+					</documentation>
+				</annotation>
+			</element>
+		</schema>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema"
+			xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/getLinkedAccount/Response/1.0"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/getLinkedAccount/Response/1.0">
+			<complexType name="LinkedAccountResponse">
+				<sequence>
+					<element form="qualified" name="processCode">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="4" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" name="returnCode">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="2" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" name="wacID">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="10" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" name="userID">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="30" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" name="mktngOption">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="4" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" name="email">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="80" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" name="linkedAcctCnt">
+						<simpleType>
+							<restriction base="int">
+								<minInclusive value="0" />
+								<maxInclusive value="99999" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" name="linkedAcctDetail_num">
+						<simpleType>
+							<restriction base="short">
+								<minInclusive value="0" />
+								<maxInclusive value="9999" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" maxOccurs="250" minOccurs="1"
+						name="linkedAcctDetail" type="cbl:linkedAcctDetail">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<dependingOn>
+									//@eTypes/@eExtensibilityElements.1/@schema/LinkedAccountResponse;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=7/linkedAcctDetail_num;XSDElementDeclaration
+								</dependingOn>
+							</appinfo>
+						</annotation>
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="linkedAcctDetail">
+				<sequence>
+					<element form="qualified" name="acctNum">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="10" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" name="nickName">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="15" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" name="address1">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="26" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element form="qualified" name="address2">
+						<annotation>
+							<appinfo source="http://www.wsadie.com/appinfo">
+								<initialValue kind="SPACE" />
+							</appinfo>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<maxLength value="26" />
+								<whiteSpace value="collapse" />
+							</restriction>
+						</simpleType>
+					</element>
+				</sequence>
+			</complexType>
+			<element name="ResponseMessage" type="cbl:LinkedAccountResponse">
+				<annotation>
+					<documentation source="com.ibm.etools.xmlent.batch">8.1.0.V200810141930
+					</documentation>
+				</annotation>
+			</element>
+		</schema>
+	</wsdl:types>
+	<wsdl:message name="getLinkedAccountRequest">
+		<wsdl:part element="xsd1:RequestMessage" name="LinkedAccountRequestPart" />
+	</wsdl:message>
+	<wsdl:message name="getLinkedAccountResponse">
+		<wsdl:part element="xsd2:ResponseMessage" name="LinkedAccountResponsePart" />
+	</wsdl:message>
+	<wsdl:portType name="E93560CCPortType">
+		<wsdl:operation name="getLinkedAccount">
+			<wsdl:input message="tns:getLinkedAccountRequest" name="getLinkedAccountRequest" />
+			<wsdl:output message="tns:getLinkedAccountResponse" name="getLinkedAccountResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="E93560CCBinding" type="tns:E93560CCPortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="getLinkedAccount">
+			<soap:operation soapAction="urn:E93560CC" style="document" />
+			<wsdl:input name="getLinkedAccountRequest">
+				<soap:body parts="LinkedAccountRequestPart" use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getLinkedAccountResponse">
+				<soap:body parts="LinkedAccountResponsePart" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="getLinkedAccount">
+		<wsdl:port binding="tns:E93560CCBinding" name="E93560CCPort">
+			<soap:address
+				location="https://soagwq1.sempra.com/OpEx/CC/eServices/getLinkedAccount/1.0" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

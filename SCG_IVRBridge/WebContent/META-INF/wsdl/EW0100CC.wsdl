@@ -1,0 +1,1745 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="EW0100CC" targetNamespace="file://target.files" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="file://target.files" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://RequestEW01" xmlns:xsd2="http://ResponseEW01">
+  <wsdl:types>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://RequestEW01" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://RequestEW01">
+      <complexType name="REQUEST">
+        <sequence>
+          <element form="qualified" name="MessageHeaderRequest" type="cbl:MessageHeaderRequest"/>
+          <element form="qualified" name="BillAccountRequest" type="cbl:BillAccountRequest"/>
+        </sequence>
+      </complexType>
+      <complexType name="MessageHeaderRequest">
+        <sequence>
+          <element form="qualified" name="Requester">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="TransactionID">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="RequestID">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="Timestamp">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="OriginatingSystem">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="OrignatingSentTime">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ServiceName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="OperationName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="SequenceNumber">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="RecordID">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="BillAccountRequest">
+        <sequence>
+          <element form="qualified" name="ReqProcessCode">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ReqDb2Collection">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ReqBillAccountID">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="REQUEST" type="cbl:REQUEST">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">8.2.300.V20090912_0347</documentation>
+        </annotation>
+      </element>
+    </schema>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ResponseEW01" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://ResponseEW01">
+      <complexType name="RESPONSE">
+        <sequence>
+          <element form="qualified" name="MessageHeaderResponse" type="cbl:MessageHeaderResponse"/>
+          <element form="qualified" name="BillAccountResponse" type="cbl:BillAccountResponse"/>
+        </sequence>
+      </complexType>
+      <complexType name="MessageHeaderResponse">
+        <sequence>
+          <element form="qualified" name="ResponseID">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ResponseCode">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ResponseMessage">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="BillAccountResponse">
+        <sequence>
+          <element form="qualified" name="RespProcessCode">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="RespDb2Collection">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="RespBillAccountID">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="User" type="cbl:User"/>
+        </sequence>
+      </complexType>
+      <complexType name="User">
+        <sequence>
+          <element form="qualified" name="CustomerId">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="usFirstName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="usLastName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="Email">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="Account" type="cbl:Account"/>
+          <element form="qualified" name="Premise" type="cbl:Premise"/>
+          <element form="qualified" name="BillCount">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="0"/>
+                <maxInclusive value="99999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" maxOccurs="25" minOccurs="1" name="Bill" type="cbl:Bill">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <dependingOn>//@eTypes/@eExtensibilityElements.1/@schema/response_billaccountresponse_user;XSDModelGroupDefinition=2/XSDModelGroup/XSDParticle=6/BillCount;XSDElementDeclaration</dependingOn>
+              </appinfo>
+            </annotation>
+          </element>
+          <element form="qualified" maxOccurs="20" minOccurs="20" name="AccountIndicator" type="cbl:AccountIndicator"/>
+        </sequence>
+      </complexType>
+      <complexType name="Account">
+        <sequence>
+          <element form="qualified" name="AccountId">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="AcFirstName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="AcLastName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="Addr1">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="Addr2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="City">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="State">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="Zip">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="BalanceDate">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="BalanceAmount">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="LastPaymentDate">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="LastPaymentAmount">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="BudgetAmountDue">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="AcDescription">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="Premise">
+        <sequence>
+          <element form="qualified" name="PremiseId">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="PmFirstName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="PmLastName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="Addr12">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="Addr22">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="City2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="State2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="Zip2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="Description">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="Bill">
+        <sequence>
+          <element form="qualified" name="BillCycle">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="BlBillDate">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="BillMonth">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="TotalAmount">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="DueDate">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="PastDue">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="LastPaymentDate2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="LastPaymentAmount2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="PaymentType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="BlBudgetBillMonth">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="BlBudgetBillAmount">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="BlBudgetBalanceAdjustment">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="BlBudgetBalance">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ServiceDesc" type="cbl:ServiceDesc"/>
+          <element form="qualified" maxOccurs="25" minOccurs="25" name="BillCharge" type="cbl:BillCharge"/>
+          <element form="qualified" maxOccurs="25" minOccurs="25" name="ServiceCharge" type="cbl:ServiceCharge"/>
+          <element form="qualified" name="Meter" type="cbl:Meter"/>
+        </sequence>
+      </complexType>
+      <complexType name="ServiceDesc">
+        <sequence>
+          <element form="qualified" name="ServiceId">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="AccountType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="NextReadDate">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="Fuel">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="CCFConversionFactor">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="SdUnits">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="TotalServiceAmount">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="TotalServiceUse">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="LoadFactor">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="TaxPercent">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="RetailSupply">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="RetailSupplierName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="SdBudgetBillMonth">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="SdBudgetBillAmount">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="SdBudgetBillAdjustment">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="SdBudgetBalance">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="BillCharge">
+        <sequence>
+          <element form="qualified" name="BcBillDate">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="BcAmount">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="BcNexusType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="BcClientType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="BcDescription">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="ServiceCharge">
+        <sequence>
+          <element form="qualified" name="ScDate">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ScAmount">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ScNexusType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ScClientType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ScDescription">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="Meter">
+        <sequence>
+          <element form="qualified" name="MeterNumber">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="MeterType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="MeterMultiplier">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ReplacesMeter">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ReplaceMeterDate">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ServicePoint">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="AMIStartDate">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="AMIEndDate">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="TwoWay">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="MeterLocation">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" maxOccurs="10" minOccurs="10" name="MeterCharge" type="cbl:MeterCharge"/>
+          <element form="qualified" name="ReadInterval" type="cbl:ReadInterval"/>
+        </sequence>
+      </complexType>
+      <complexType name="MeterCharge">
+        <sequence>
+          <element form="qualified" name="McDate">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="McAmount">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="McNexusType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="McClientType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="McDescription">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="ReadInterval">
+        <sequence>
+          <element form="qualified" name="RateClass">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="RateGroup">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="RateClassAttribute" type="cbl:RateClassAttribute"/>
+          <element form="qualified" name="BillDays">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="StartDate">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="EndDate">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="UseDetail" type="cbl:UseDetail"/>
+        </sequence>
+      </complexType>
+      <complexType name="RateClassAttribute">
+        <sequence>
+          <element form="qualified" maxOccurs="10" minOccurs="10" name="RateClassAttrKeys" type="cbl:RateClassAttrKeys"/>
+        </sequence>
+      </complexType>
+      <complexType name="RateClassAttrKeys">
+        <sequence>
+          <element form="qualified" name="RateClassKey">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="RateClassValue">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="UseDetail">
+        <sequence>
+          <element form="qualified" name="StartMeterRead">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="EndMeterRead">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="UdAmount">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="UdNexusType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="UdClientType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="Quantity">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="UdUnits">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ReadType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="ChannelId">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="LoadType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" maxOccurs="50" minOccurs="50" name="AmountDetails" type="cbl:AmountDetails"/>
+        </sequence>
+      </complexType>
+      <complexType name="AmountDetails">
+        <sequence>
+          <element form="qualified" name="AdAmount">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="12"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="AdNexusType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="AdClientType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="AccountIndicator">
+        <sequence>
+          <element form="qualified" name="IndicatorType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="IndicatorValue">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="RESPONSE" type="cbl:RESPONSE">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">8.2.300.V20090912_0347</documentation>
+        </annotation>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="EW0100CCOperationRequest">
+    <wsdl:part element="xsd1:REQUEST" name="REQUESTPart"/>
+  </wsdl:message>
+  <wsdl:message name="EW0100CCOperationResponse">
+    <wsdl:part element="xsd2:RESPONSE" name="RESPONSEPart"/>
+  </wsdl:message>
+  <wsdl:portType name="EW0100CCPortType">
+    <wsdl:operation name="EW0100CCOperation">
+      <wsdl:input message="tns:EW0100CCOperationRequest" name="EW0100CCOperationRequest"/>
+      <wsdl:output message="tns:EW0100CCOperationResponse" name="EW0100CCOperationResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EW0100CCBinding" type="tns:EW0100CCPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="EW0100CCOperation">
+      <soap:operation soapAction="urn:EW0100CC" style="document"/>
+      <wsdl:input name="EW0100CCOperationRequest">
+        <soap:body parts="REQUESTPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="EW0100CCOperationResponse">
+        <soap:body parts="RESPONSEPart" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EW0100CCService">
+    <wsdl:port binding="tns:EW0100CCBinding" name="EW0100CCPort">
+      <soap:address location="https://mvs3-ftp.pacent.com:3248/ew01/ew0100cc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

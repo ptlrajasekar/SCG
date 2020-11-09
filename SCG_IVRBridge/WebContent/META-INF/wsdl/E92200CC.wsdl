@@ -1,0 +1,891 @@
+<wsdl:definitions name="E92200CC" targetNamespace="file://target.files" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="file://target.files" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://ns.sempra.com/OpEx/CC/eServices/CustomerServiceOrder/Request/1.0" xmlns:xsd2="http://ns.sempra.com/OpEx/CC/eServices/CustomerServiceOrder/Response/1.0">
+  <wsdl:types>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/CustomerServiceOrder/Request/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/CustomerServiceOrder/Request/1.0">
+      <complexType name="REQUEST">
+        <sequence>
+          <element name="r100_cso_mf_recv_data" type="cbl:R100_CSO_MF_RECV_DATA"/>
+        </sequence>
+      </complexType>
+      <complexType name="R100_CSO_MF_RECV_DATA">
+        <sequence>
+          <element form="qualified" name="r100_channel_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_operation_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_db2collname">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_process_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_process_tm">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_channel_mthd_ty">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="15"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_csr_userid">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_email_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="80"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_ba_id">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="r100_appl_info" type="cbl:R100_APPL_INFO"/>
+          <element name="r100_order_info" type="cbl:R100_ORDER_INFO"/>
+        </sequence>
+      </complexType>
+      <complexType name="R100_APPL_INFO">
+        <sequence>
+          <element form="qualified" name="r100_appl_ty_1">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_1_inop_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_1_adj_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_ty_2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_2_inop_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_2_adj_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_ty_3">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_3_inop_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_3_adj_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_ty_4">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_4_inop_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_4_adj_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_ty_5">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_5_inop_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_5_adj_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_ty_6">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_6_inop_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_6_adj_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_ty_7">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_7_txt_entered">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_7_inop_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_appl_7_adj_flg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_light_pilot_sw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_fd_comm_prepd_sw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_add_appl_info">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="120"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="R100_ORDER_INFO">
+        <sequence>
+          <element form="qualified" name="r100_ordr_schd_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_ordr_arrgmt_ty">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_ordr_tm_appt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_access_arrgmt_1">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_access_arrgmt_2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_gate_flag">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_dog_info_flag">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_entry_instrctns">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="53"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_requestor_nm">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_contact_nm">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="r100_contact_phn" type="cbl:R100_CONTACT_PHN"/>
+          <element form="qualified" name="r100_contact_phn_extn">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="5"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_cross_st">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="14"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="R100_CONTACT_PHN">
+        <sequence>
+          <element form="qualified" name="r100_contact_area_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="3"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r100_contact_phn_nbr">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="7"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="REQUEST" type="cbl:REQUEST">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">7.26.0.V200711021424</documentation>
+        </annotation>
+      </element>
+    </schema>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/CustomerServiceOrder/Response/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/CustomerServiceOrder/Response/1.0">
+      <complexType name="RESPONSE">
+        <sequence>
+          <element name="s100_cso_mf_send_data" type="cbl:S100_CSO_MF_SEND_DATA"/>
+        </sequence>
+      </complexType>
+      <complexType name="S100_CSO_MF_SEND_DATA">
+        <sequence>
+          <element form="qualified" name="s100_operation_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s100_message_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s100_ba_id">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="s100_error_info" type="cbl:S100_ERROR_INFO"/>
+          <element name="s100_valdt_info" type="cbl:S100_VALDT_INFO"/>
+          <element name="s100_schdl_info" type="cbl:S100_SCHDL_INFO"/>
+          <element name="s100_create_info" type="cbl:S100_CREATE_INFO"/>
+        </sequence>
+      </complexType>
+      <complexType name="S100_ERROR_INFO">
+        <sequence>
+          <element form="qualified" name="s100_sys_err_cd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s100_app_err_cd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s100_err_msg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="100"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="S100_VALDT_INFO">
+        <sequence>
+          <element form="qualified" name="s100_facility_ty_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s100_cust_nm">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="45"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s100_serv_addr_ln1">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s100_serv_addr_ln2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="40"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s100_cross_st">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="14"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="S100_SCHDL_INFO">
+        <sequence>
+          <element form="qualified" name="s100_appl_priority">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" maxOccurs="31" minOccurs="31" name="s100_available_schedule" type="cbl:S100_AVAILABLE_SCHEDULE"/>
+        </sequence>
+      </complexType>
+      <complexType name="S100_AVAILABLE_SCHEDULE">
+        <sequence>
+          <sequence>
+            <element form="qualified" name="s100_schd_day_dt">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s100_avail_all_day">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="1"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s100_avail_am">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="1"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s100_avail_pm">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="1"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s100_avail_evening_wnd">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="1"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s100_avail_ta">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="1"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </sequence>
+      </complexType>
+      <complexType name="S100_CREATE_INFO">
+        <sequence>
+          <element form="qualified" name="s100_order_confirm_nbr">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="RESPONSE" type="cbl:RESPONSE">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">7.26.0.V200711021424</documentation>
+        </annotation>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="createCustomerServiceOrderRequest">
+    <wsdl:part element="xsd1:REQUEST" name="REQUESTPart"/>
+  </wsdl:message>
+  <wsdl:message name="createCustomerServiceOrderResponse">
+    <wsdl:part element="xsd2:RESPONSE" name="RESPONSEPart"/>
+  </wsdl:message>
+  <wsdl:portType name="E92200CCPortType">
+    <wsdl:operation name="createCustomerServiceOrder">
+      <wsdl:input message="tns:createCustomerServiceOrderRequest" name="createCustomerServiceOrderRequest"/>
+      <wsdl:output message="tns:createCustomerServiceOrderResponse" name="createCustomerServiceOrderResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="E92200CCBinding" type="tns:E92200CCPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createCustomerServiceOrder">
+      <soap:operation soapAction="urn:E92200CC" style="document"/>
+      <wsdl:input name="createCustomerServiceOrderRequest">
+        <soap:body parts="REQUESTPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createCustomerServiceOrderResponse">
+        <soap:body parts="RESPONSEPart" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="createCustomerServiceOrder">
+    <wsdl:port binding="tns:E92200CCBinding" name="E92200CCPort">
+      <soap:address location="https://soagwq1.sempra.com/OpEx/CC/eServices/CustomerServiceOrder/1.0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

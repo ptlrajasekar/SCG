@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="E92800CC" targetNamespace="file://target.files" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="file://target.files" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://ns.sempra.com/OpEx/CC/eServices/PaymentExtensionRequest/1.0" xmlns:xsd2="http://ns.sempra.com/OpEx/CC/eServices/PaymentExtensionResponse/1.0">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/PaymentExtensionRequest/1.0" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/PaymentExtensionRequest/1.0">
+      <complexType name="REQUEST">
+        <sequence>
+          <element form="qualified" name="pymt_ext_request_data" type="cbl:PYMT_EXT_REQUEST_DATA"/>
+        </sequence>
+      </complexType>
+      <complexType name="PYMT_EXT_REQUEST_DATA">
+        <sequence>
+          <element form="qualified" name="t800_operation_cd">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="t800_channel_type">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="3"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="t800_database_name">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="t800_req_ba_id">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="t800_pe_create_ext_section" type="cbl:T800_PE_CREATE_EXT_SECTION"/>
+        </sequence>
+      </complexType>
+      <complexType name="T800_PE_CREATE_EXT_SECTION">
+        <sequence>
+          <element form="qualified" name="t800_customer_phone_number" type="cbl:T800_CUSTOMER_PHONE_NUMBER"/>
+          <element form="qualified" name="t800_cust_cell_phone_number" type="cbl:T800_CUST_CELL_PHONE_NUMBER"/>
+          <element form="qualified" name="t800_update_or_create_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="t800_existing_ext_pe_id">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="0"/>
+                <maxInclusive value="99999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="t800_pymt_ext_amt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="0"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="t800_pymt_ext_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="t800_number_of_installments">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" maxOccurs="12" minOccurs="12" name="t800_pymt_arr" type="cbl:T800_PYMT_ARR"/>
+          <element form="qualified" name="t800_su_logon_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="T800_CUSTOMER_PHONE_NUMBER">
+        <sequence>
+          <element form="qualified" name="t800_customer_ph_area">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="t800_customer_ph_number">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="T800_CUST_CELL_PHONE_NUMBER">
+        <sequence>
+          <element form="qualified" name="t800_cust_cell_ph_area">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="t800_cust_cell_ph_nbr">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="T800_PYMT_ARR">
+        <sequence>
+          <element form="qualified" name="t800_pymt_arr_amt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="0"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="t800_pymt_arr_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="t800_pymt_arr_mthd_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="REQUEST" type="cbl:REQUEST">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">11.2.100.V20150821_1022</documentation>
+        </annotation>
+      </element>
+    </schema>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/PaymentExtensionResponse/1.0" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/PaymentExtensionResponse/1.0">
+      <complexType name="RESPONSE">
+        <sequence>
+          <element form="qualified" name="pymt_ext_response_data" type="cbl:PYMT_EXT_RESPONSE_DATA"/>
+        </sequence>
+      </complexType>
+      <complexType name="PYMT_EXT_RESPONSE_DATA">
+        <sequence>
+          <element form="qualified" name="x800_pymt_extn_oper_cd">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_return_code">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_error_msg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="100"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_appl_error_cd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_system_error_cd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_ba_id">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="pymt_ext_validation_data" type="cbl:PYMT_EXT_VALIDATION_DATA"/>
+          <element form="qualified" name="pymt_ext_create_data" type="cbl:PYMT_EXT_CREATE_DATA"/>
+        </sequence>
+      </complexType>
+      <complexType name="PYMT_EXT_VALIDATION_DATA">
+        <sequence>
+          <element form="qualified" name="x800_check_digit">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="9"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_cust_phone_number" type="cbl:X800_CUST_PHONE_NUMBER"/>
+          <element form="qualified" name="x800_cust_cell_number" type="cbl:X800_CUST_CELL_NUMBER"/>
+          <element form="qualified" name="x800_on_care_sw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_abe_cur_bal_amt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_abe_bill_end_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_arrears">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_abe_tot_net_amt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_debits_credits">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_ret_check_amt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_third_party_charges">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_total_extendable_chrgs">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_avoid_shutoff_amt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_above_mca_sw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_number_of_current_inst">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" maxOccurs="12" minOccurs="12" name="x800_existing_ext_sect" type="cbl:X800_EXISTING_EXT_SECT"/>
+          <element form="qualified" name="x800_existing_ext_pe_id">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="0"/>
+                <maxInclusive value="99999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_existing_ext_upd_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_number_of_new_inst">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_payment_arr_option1" type="cbl:X800_PAYMENT_ARR_OPTION1"/>
+          <element form="qualified" name="x800_payment_arr_option2" type="cbl:X800_PAYMENT_ARR_OPTION2"/>
+          <element form="qualified" name="x800_myaccount_linked_sw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_remaining_balance">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="0"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="X800_CUST_PHONE_NUMBER">
+        <sequence>
+          <element form="qualified" name="x800_area_code">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_phone_number">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="X800_CUST_CELL_NUMBER">
+        <sequence>
+          <element form="qualified" name="x800_cell_area_code">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_cell_phone_number">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="X800_EXISTING_EXT_SECT">
+        <sequence>
+          <element form="qualified" name="x800_pe_cur_pes_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_pe_cur_pes_amt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_pe_cur_pmt_mthd_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="X800_PAYMENT_ARR_OPTION1">
+        <sequence>
+          <element form="qualified" name="x800_opt1_arr_amt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="0"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_opt1_arr_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_opt1_arr_mthd_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="X800_PAYMENT_ARR_OPTION2">
+        <sequence>
+          <element form="qualified" name="x800_opt2_arr_amt1">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="0"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_opt2_arr_dt1">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_opt2_arr_mthd_cd1">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_opt2_arr_amt2">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="0"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_opt2_arr_dt2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_opt2_arr_mthd_cd2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="PYMT_EXT_CREATE_DATA">
+        <sequence>
+          <element form="qualified" name="x800_customer_name">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="47"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_address_line1">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="67"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_address_line2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="44"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_bill_account_num">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="14"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_grant_48hr_ntc_sw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_pe_id">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="0"/>
+                <maxInclusive value="99999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="x800_service_zip_code">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="5"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="RESPONSE" type="cbl:RESPONSE">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">11.2.100.V20150821_1022</documentation>
+        </annotation>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="createPaymentExtensionRequest">
+    <wsdl:part element="xsd1:REQUEST" name="REQUESTPart"/>
+  </wsdl:message>
+  <wsdl:message name="createPaymentExtensionResponse">
+    <wsdl:part element="xsd2:RESPONSE" name="RESPONSEPart"/>
+  </wsdl:message>
+  <wsdl:portType name="E92800CCPortType">
+    <wsdl:operation name="createPaymentExtension">
+      <wsdl:input message="tns:createPaymentExtensionRequest" name="createPaymentExtensionRequest"/>
+      <wsdl:output message="tns:createPaymentExtensionResponse" name="createPaymentExtensionResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="E92800CCBinding" type="tns:E92800CCPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createPaymentExtension">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createPaymentExtensionRequest">
+        <soap:body parts="REQUESTPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createPaymentExtensionResponse">
+        <soap:body parts="RESPONSEPart" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="createPaymentExtension">
+    <wsdl:port binding="tns:E92800CCBinding" name="E92800CCPort">
+      <soap:address location="https://mvs3-ftp.pacent.com:3126/OpEx/CC/eServices/PaymentExtension/1.0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

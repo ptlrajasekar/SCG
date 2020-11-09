@@ -1,0 +1,275 @@
+<wsdl:definitions name="E92600CC" targetNamespace="file://target.files" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="file://target.files" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://ns.sempra.com/OpEx/CC/eServices/BillingFunctions/Request/1.0" xmlns:xsd2="http://ns.sempra.com/OpEx/CC/eServices/BillingFunctions/Response/1.0">
+  <wsdl:types>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/BillingFunctions/Request/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/BillingFunctions/Request/1.0">
+      <complexType name="REQUEST">
+        <sequence>
+          <element name="billing_services_request_data" type="cbl:BILLING_SERVICES_REQUEST_DATA"/>
+        </sequence>
+      </complexType>
+      <complexType name="BILLING_SERVICES_REQUEST_DATA">
+        <sequence>
+          <element form="qualified" name="req_operation_cd">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="req_channel_type">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="3"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="req_database_name">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="req_ba_id">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="req_fldr_hist_data">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="REQUEST" type="cbl:REQUEST">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">7.26.0.V200711021424</documentation>
+        </annotation>
+      </element>
+    </schema>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/BillingFunctions/Response/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/BillingFunctions/Response/1.0">
+      <complexType name="RESPONSE">
+        <sequence>
+          <element name="billing_services_response_data" type="cbl:BILLING_SERVICES_RESPONSE_DATA"/>
+        </sequence>
+      </complexType>
+      <complexType name="BILLING_SERVICES_RESPONSE_DATA">
+        <sequence>
+          <element form="qualified" name="resp_bill_serv_oper_cd">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="resp_return_code">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="resp_error_msg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="100"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="resp_appl_error_cd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="resp_system_error_cd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="resp_ba_id">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="account_balance_data" type="cbl:ACCOUNT_BALANCE_DATA"/>
+          <element name="lpp_amortization_data" type="cbl:LPP_AMORTIZATION_DATA"/>
+        </sequence>
+      </complexType>
+      <complexType name="ACCOUNT_BALANCE_DATA">
+        <sequence>
+          <element form="qualified" name="resp_inq_current_bal_due">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="resp_inq_lpp_sw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="resp_inq_payment_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="resp_inq_payment_amount">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="resp_inq_check_digit">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="resp_inq_bill_due_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="resp_inq_past_due_sw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="resp_inq_zip_code">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="0"/>
+                <maxInclusive value="99999"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="LPP_AMORTIZATION_DATA">
+        <sequence>
+          <element form="qualified" name="resp_lpp_new_pymt_amt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="RESPONSE" type="cbl:RESPONSE">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">7.26.0.V200711021424</documentation>
+        </annotation>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="createBillingFunctionsRequestRequest">
+    <wsdl:part element="xsd1:REQUEST" name="REQUESTPart"/>
+  </wsdl:message>
+  <wsdl:message name="createBillingFunctionsRequestResponse">
+    <wsdl:part element="xsd2:RESPONSE" name="RESPONSEPart"/>
+  </wsdl:message>
+  <wsdl:portType name="E92600CCPortType">
+    <wsdl:operation name="createBillingFunctionsRequest">
+      <wsdl:input message="tns:createBillingFunctionsRequestRequest" name="createBillingFunctionsRequestRequest"/>
+      <wsdl:output message="tns:createBillingFunctionsRequestResponse" name="createBillingFunctionsRequestResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="E92600CCBinding" type="tns:E92600CCPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createBillingFunctionsRequest">
+      <soap:operation soapAction="urn:E92600CC" style="document"/>
+      <wsdl:input name="createBillingFunctionsRequestRequest">
+        <soap:body parts="REQUESTPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createBillingFunctionsRequestResponse">
+        <soap:body parts="RESPONSEPart" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="createBillingFunctions">
+    <wsdl:port binding="tns:E92600CCBinding" name="E92600CCPort">
+      <soap:address location="https://soagwq1.sempra.com/OpEx/CC/eServices/BillingFunctions/E92600CC/1.0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ns.sempra.com/scg/ws/CustomerManagement/Billing/CustomerInformationService" xmlns:emf="http://ns.sempra.com/im/BusinessTechnology/Common/EMFSchemaV2" xmlns:bill="http://ns.sempra.com/scg/im/CustomerManagement/CustomerAccountManagement/BillAccountV1" xmlns:res="http://ns.sempra.com/scg/im/BusinessTechnology/Common/EMFResponseV1" name="CustomerInformationService" targetNamespace="http://ns.sempra.com/scg/ws/CustomerManagement/Billing/CustomerInformationService">
+	<wsdl:documentation>
+		This WSDL contains the necessary operations and message types to publish customer data as necessary
+		to integrate Aclara EnergyPrism with SoCalGas Portal. 
+	</wsdl:documentation>
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.sempra.com/scg/ws/CustomerManagement/Billing/CustomerInformationService" xmlns:bill="http://ns.sempra.com/scg/im/CustomerManagement/CustomerAccountManagement/BillAccountV1" xmlns:res="http://ns.sempra.com/scg/im/BusinessTechnology/Common/EMFResponseV1">
+			<xsd:import namespace="http://ns.sempra.com/scg/im/CustomerManagement/CustomerAccountManagement/BillAccountV1" schemaLocation="http://ns.sempra.com/scg/im/CustomerManagement/CustomerAccountManagement/BillAccountV1.xsd"/>
+			<xsd:import namespace="http://ns.sempra.com/scg/im/BusinessTechnology/Common/EMFResponseV1" schemaLocation="http://ns.sempra.com/scg/im/BusinessTechnology/Common/EMFResponseV1.xsd"/>
+			<xs:import namespace="http://ns.sempra.com/im/BusinessTechnology/Common/EMFSchemaV2" schemaLocation="http://ns.sempra.com/scg/im/BusinessTechnology/Common/EMFSchemaV2.xsd"/>
+			<xs:simpleType name="Identifier_Type">
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="64"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="CISProcessCode_Type">
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="4"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="CIS_Db2Collection_Type">
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="8"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="BillDate">
+				<xs:restriction base="xs:date">                
+                 </xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="PremiseID">
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="10"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="PublishCustomerBillData">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="AppID" type="tns:CIS_Db2Collection_Type"/>
+						<xs:element name="AppUserName" type="tns:Identifier_Type"/>
+						<xs:element name="ReferrerID" type="tns:Identifier_Type"/>
+						<xs:element name="GUID" type="tns:Identifier_Type"/>
+						<xs:element name="ReqProcessCode" type="tns:CISProcessCode_Type"/>
+						<xs:element name="ReqDb2Collection" type="tns:CIS_Db2Collection_Type"/>
+						<xs:element ref="bill:BillAccount"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PublishCustomerBillDataResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CustomerID" type="tns:Identifier_Type"/>
+						<xs:element name="LatestBillDate" type="tns:BillDate"/>
+						<xs:element name="MeterID" type="tns:Identifier_Type"/>
+						<xs:element name="PremiseID" type="tns:PremiseID"/>
+						<xs:element name="MeterType" type="tns:Identifier_Type"/>
+						<xs:element name="AccountType" type="tns:Identifier_Type"/>
+						<xs:element ref="res:Response"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="TransactionHeader">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="emf:EMFHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="PublishCustomerBillDataRequest">
+		<wsdl:part name="parameters" element="tns:PublishCustomerBillData"/>
+		<wsdl:part name="RequestHeader" element="tns:TransactionHeader"/>
+	</wsdl:message>
+	<wsdl:message name="PublishCustomerBillDataResponse">
+		<wsdl:part name="parameters" element="tns:PublishCustomerBillDataResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="CustomerInformationServiceInterface">
+		<wsdl:operation name="PublishCustomerBillData">
+			<wsdl:documentation>
+				This operation publishes customer bill data to Aclara EnergyPrism.
+      	 </wsdl:documentation>
+			<wsdl:input name="PublishCustomerBillDataRequest" message="tns:PublishCustomerBillDataRequest"/>
+			<wsdl:output name="PublishCustomerBillDataResponse" message="tns:PublishCustomerBillDataResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CustomerInformationSoapHttpBinding" type="tns:CustomerInformationServiceInterface">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="PublishCustomerBillData">
+			<soap:operation soapAction="http://ns.sempra.com/scg/ws/CustomerManagement/Billing/CustomerInformationService/PublishCustomerBillData" style="document"/>
+			<wsdl:input name="PublishCustomerBillDataRequest">
+				<soap:header message="tns:PublishCustomerBillDataRequest" part="RequestHeader" use="literal"/>
+				<soap:body parts="parameters" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="parameters" use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CustomerInformationService">
+		<wsdl:documentation>
+			This service should be exposed in XML gateway for the callers. Gateway should be configured such a way that
+			only authenticated and authorized systems are allowed to invoke the services. XML gateway should route the
+			service calls to appropriate backend orchestration/message service bus components.
+  		</wsdl:documentation>
+		<wsdl:port name="CustomerInformationEndPoint" binding="tns:CustomerInformationSoapHttpBinding">
+			<soap:address location="https://ns.sempra.com/scg/ws/CustomerManagement/Billing/CustomerInformationService"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

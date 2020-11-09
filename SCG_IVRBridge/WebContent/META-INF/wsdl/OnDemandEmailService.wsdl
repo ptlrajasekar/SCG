@@ -1,0 +1,90 @@
+<wsdl:definitions
+	xmlns="http://ns.sempra.com/ws/BusinessTechnology/Common/CustomerContact/OnDemandEmailServiceV1"
+	xmlns:contacttypes="http://ns.sempra.com/im/BusinessTechnology/Common/CustomerContact/OnDemandEmailServiceTypesV1"
+	xmlns:emf="http://ns.sempra.com/im/BusinessTechnology/Common/EMFSchemaV2"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://ns.sempra.com/ws/BusinessTechnology/Common/CustomerContact/OnDemandEmailServiceV1"
+	xmlns:typeIn1="http://ns.sempra.com/im/BusinessTechnology/Common/CustomerContact/ContactRequest/ContactRequestV1"
+	xmlns:typeIn2="http://ns.sempra.com/im/BusinessTechnology/Common/CustomerContact/ContactResponse/ContactResponseV1"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://ns.sempra.com/ws/BusinessTechnology/Common/CustomerContact/OnDemandEmailServiceV1">
+	<wsdl:documentation>
+		OnDemandEmailService version 1.0 Shared service for sending email communication to
+		consumers
+	</wsdl:documentation>
+	<wsdl:types>
+		<xs:schema attributeFormDefault="qualified"
+			elementFormDefault="qualified"
+			targetNamespace="http://ns.sempra.com/im/BusinessTechnology/Common/CustomerContact/OnDemandEmailServiceTypesV1">
+			<xs:import
+				namespace="http://ns.sempra.com/im/BusinessTechnology/Common/CustomerContact/ContactRequest/ContactRequestV1"
+				schemaLocation="./CustomerContactRequest.xsd" />
+			<xs:import
+				namespace="http://ns.sempra.com/im/BusinessTechnology/Common/CustomerContact/ContactResponse/ContactResponseV1"
+				schemaLocation="./CustomerContactResponse.xsd" />
+			<xs:import
+				namespace="http://ns.sempra.com/im/BusinessTechnology/Common/EMFSchemaV2"
+				schemaLocation="./EMFSchemaV2.xsd" />
+			<xs:element name="getCustomerContactRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="typeIn1:CustomerContactRequestMessage" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getCustomerContactResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="typeIn2:CustomerContactResponseMessage" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="MessageHeader">
+		<wsdl:part element="emf:EMFHeader" name="MessageHeader" />
+	</wsdl:message>
+	<wsdl:message name="GetCustomerContactRequest">
+		<wsdl:part element="contacttypes:getCustomerContactRequest"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="GetCustomerContactResponse">
+		<wsdl:part element="contacttypes:getCustomerContactResponse"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:portType name="CustomerContactServicePortType">
+		<wsdl:operation name="sendEmailOnDemand">
+			<wsdl:documentation>Send on demand email to consumers
+			</wsdl:documentation>
+			<wsdl:input message="tns:GetCustomerContactRequest" name="GetCustomerContactRequest" />
+			<wsdl:output message="tns:GetCustomerContactResponse"
+				name="GetCustomerContactResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CustomerContactServiceSoap11Binding"
+		type="tns:CustomerContactServicePortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="sendEmailOnDemand">
+			<soap:operation soapAction="urn:sendEmailOnDemand"
+				style="document" />
+			<wsdl:input name="GetCustomerContactRequest">
+				<soap:body use="literal" />
+				<soap:header message="tns:MessageHeader" part="MessageHeader"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetCustomerContactResponse">
+				<soap:body use="literal" />
+				<soap:header message="MessageHeader" part="MessageHeader"
+					use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CustomerContactService">
+		<wsdl:port binding="tns:CustomerContactServiceSoap11Binding"
+			name="CustomerContactServicePort">
+			<soap:address
+				location="https://soagwd.sempra.com/ws/BusinessTechnology/Common/CustomerContact/CustomerContactServiceV1/d2" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

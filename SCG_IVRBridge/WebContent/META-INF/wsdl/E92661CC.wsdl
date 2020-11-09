@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="E92661CC" targetNamespace="file://target.files" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="file://target.files" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://ns.sempra.com/OpEx/CC/eServices/AuthenticateAni/Request/1.0" xmlns:xsd2="http://ns.sempra.com/OpEx/CC/eServices/AuthenticateAni/Response/1.0">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/AuthenticateAni/Request/1.0" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/AuthenticateAni/Request/1.0">
+      <complexType name="REQUEST">
+        <sequence>
+          <element form="qualified" name="authenticateANIRequest" type="cbl:authenticateANIRequest"/>
+        </sequence>
+      </complexType>
+      <complexType name="authenticateANIRequest">
+        <sequence>
+          <element form="qualified" name="reqOperationCd">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="channelType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="3"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="databaseName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="reqPhoneNo">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="REQUEST" type="cbl:REQUEST">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">11.2.100.V20150821_1022</documentation>
+        </annotation>
+      </element>
+    </schema>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/AuthenticateAni/Response/1.0" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/AuthenticateAni/Response/1.0">
+      <complexType name="RESPONSE">
+        <sequence>
+          <element form="qualified" name="authenticateANIResponse" type="cbl:authenticateANIResponse"/>
+        </sequence>
+      </complexType>
+      <complexType name="authenticateANIResponse">
+        <sequence>
+          <element form="qualified" name="respOperationCd">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="returnCd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="errorMsg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="100"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="applErrorCd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="systemErrorCd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="respPhoneNo">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="authenticateANIData" type="cbl:authenticateANIData"/>
+        </sequence>
+      </complexType>
+      <complexType name="authenticateANIData">
+        <sequence>
+          <element form="qualified" name="numberOfAddressReturned">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" maxOccurs="10" minOccurs="10" name="addressTable" type="cbl:addressTable"/>
+        </sequence>
+      </complexType>
+      <complexType name="addressTable">
+        <sequence>
+          <element form="qualified" name="phoneNo">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="accountNumber">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="baStatCd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="servDaNbr">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="6"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="RESPONSE" type="cbl:RESPONSE">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">11.2.100.V20150821_1022</documentation>
+        </annotation>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="createAuthenticateAniRequest">
+    <wsdl:part element="xsd1:REQUEST" name="REQUESTPart"/>
+  </wsdl:message>
+  <wsdl:message name="createAuthenticateAniResponse">
+    <wsdl:part element="xsd2:RESPONSE" name="RESPONSEPart"/>
+  </wsdl:message>
+  <wsdl:portType name="E92661CCPortType">
+    <wsdl:operation name="createAuthenticateAni">
+      <wsdl:input message="tns:createAuthenticateAniRequest" name="createAuthenticateAniRequest"/>
+      <wsdl:output message="tns:createAuthenticateAniResponse" name="createAuthenticateAniResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="E92661CCBinding" type="tns:E92661CCPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createAuthenticateAni">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createAuthenticateAniRequest">
+        <soap:body parts="REQUESTPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createAuthenticateAniResponse">
+        <soap:body parts="RESPONSEPart" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="createAuthenticateAni">
+    <wsdl:port binding="tns:E92661CCBinding" name="E92661CCPort">
+      <soap:address location="https://mvs3-ftp.pacent.com:3048/OpEx/CC/eServices/AuthenticateAni/E92661CC/1.0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

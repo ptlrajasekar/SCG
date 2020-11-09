@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="Aclara:UFx:BillModel" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="BillModelService" targetNamespace="Aclara:UFx:BillModel">
+	<wsdl:types>
+		<xsd:schema targetNamespace="Aclara:UFx:BillModel/Imports">
+			<xsd:import schemaLocation="./Billxsd0.xsd" namespace="Aclara:UFx:BillModel"/>
+			<xsd:import schemaLocation="http://ns.sempra.com/scg/ws/Aclara/MobileEP/Bill/XSD/Billxsd1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+			<xsd:import schemaLocation="http://ns.sempra.com/scg/ws/Aclara/MobileEP/Bill/XSD/Billxsd2.xsd" namespace="Aclara:UFx:CommonWDS"/>
+			<xsd:import schemaLocation="http://ns.sempra.com/scg/ws/Aclara/MobileEP/Bill/XSD/Billxsd3.xsd" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Specialized"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="BillModelService_GetBillHighlights_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetBillHighlights"/>
+	</wsdl:message>
+	<wsdl:message name="BillModelService_GetBillHighlights_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetBillHighlightsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="BillModelService_UploadBillData_InputMessage">
+		<wsdl:part name="parameters" element="tns:UploadBillData"/>
+	</wsdl:message>
+	<wsdl:message name="BillModelService_UploadBillData_OutputMessage">
+		<wsdl:part name="parameters" element="tns:UploadBillDataResponse"/>
+	</wsdl:message>
+	<wsdl:message name="BillModelService_GetBillDataStatus_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetBillDataStatus"/>
+	</wsdl:message>
+	<wsdl:message name="BillModelService_GetBillDataStatus_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetBillDataStatusResponse"/>
+	</wsdl:message>
+	<wsdl:message name="BillModelService_GetBillToDate_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetBillToDate"/>
+	</wsdl:message>
+	<wsdl:message name="BillModelService_GetBillToDate_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetBillToDateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="BillModelService_GetBillToDatePull_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetBillToDatePull"/>
+	</wsdl:message>
+	<wsdl:message name="BillModelService_GetBillToDatePull_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetBillToDatePullResponse"/>
+	</wsdl:message>
+	<wsdl:message name="BillModelService_GetBillSummary_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetBillSummary"/>
+	</wsdl:message>
+	<wsdl:message name="BillModelService_GetBillSummary_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetBillSummaryResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="BillModelService">
+		<wsdl:operation name="GetBillHighlights">
+			<wsdl:input message="tns:BillModelService_GetBillHighlights_InputMessage" wsaw:Action="Aclara:UFx:BillModel/BillModelService/GetBillHighlights"/>
+			<wsdl:output message="tns:BillModelService_GetBillHighlights_OutputMessage" wsaw:Action="Aclara:UFx:BillModel/BillModelService/GetBillHighlightsResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UploadBillData">
+			<wsdl:input message="tns:BillModelService_UploadBillData_InputMessage" wsaw:Action="Aclara:UFx:BillModel/BillModelService/UploadBillData"/>
+			<wsdl:output message="tns:BillModelService_UploadBillData_OutputMessage" wsaw:Action="Aclara:UFx:BillModel/BillModelService/UploadBillDataResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillDataStatus">
+			<wsdl:input message="tns:BillModelService_GetBillDataStatus_InputMessage" wsaw:Action="Aclara:UFx:BillModel/BillModelService/GetBillDataStatus"/>
+			<wsdl:output message="tns:BillModelService_GetBillDataStatus_OutputMessage" wsaw:Action="Aclara:UFx:BillModel/BillModelService/GetBillDataStatusResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillToDate">
+			<wsdl:input message="tns:BillModelService_GetBillToDate_InputMessage" wsaw:Action="Aclara:UFx:BillModel/BillModelService/GetBillToDate"/>
+			<wsdl:output message="tns:BillModelService_GetBillToDate_OutputMessage" wsaw:Action="Aclara:UFx:BillModel/BillModelService/GetBillToDateResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillToDatePull">
+			<wsdl:input message="tns:BillModelService_GetBillToDatePull_InputMessage" wsaw:Action="Aclara:UFx:BillModel/BillModelService/GetBillToDatePull"/>
+			<wsdl:output message="tns:BillModelService_GetBillToDatePull_OutputMessage" wsaw:Action="Aclara:UFx:BillModel/BillModelService/GetBillToDatePullResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillSummary">
+			<wsdl:input message="tns:BillModelService_GetBillSummary_InputMessage" wsaw:Action="Aclara:UFx:BillModel/BillModelService/GetBillSummary"/>
+			<wsdl:output message="tns:BillModelService_GetBillSummary_OutputMessage" wsaw:Action="Aclara:UFx:BillModel/BillModelService/GetBillSummaryResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="BasicHttpBinding_BillModelService" type="tns:BillModelService">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsp:PolicyReference URI="#BasicHttpBinding_BillModelService_policy"/>
+		<wsdl:operation name="GetBillHighlights">
+			<soap:operation soapAction="Aclara:UFx:BillModel/BillModelService/GetBillHighlights" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UploadBillData">
+			<soap:operation soapAction="Aclara:UFx:BillModel/BillModelService/UploadBillData" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillDataStatus">
+			<soap:operation soapAction="Aclara:UFx:BillModel/BillModelService/GetBillDataStatus" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillToDate">
+			<soap:operation soapAction="Aclara:UFx:BillModel/BillModelService/GetBillToDate" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillToDatePull">
+			<soap:operation soapAction="Aclara:UFx:BillModel/BillModelService/GetBillToDatePull" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillSummary">
+			<soap:operation soapAction="Aclara:UFx:BillModel/BillModelService/GetBillSummary" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="BillModelService">
+		<wsdl:port name="BasicHttpBinding_BillModelService" binding="tns:BasicHttpBinding_BillModelService">
+			<soap:address location="https://webdataservices.uat.aclarasw.com/billmodel/BillModelService.svc"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsp:Policy wsu:Id="BasicHttpBinding_BillModelService_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+					<wsp:Policy>
+						<sp:TransportToken>
+							<wsp:Policy>
+								<sp:HttpsToken RequireClientCertificate="false"/>
+							</wsp:Policy>
+						</sp:TransportToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic256/>
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:Layout>
+							<wsp:Policy>
+								<sp:Strict/>
+							</wsp:Policy>
+						</sp:Layout>
+					</wsp:Policy>
+				</sp:TransportBinding>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+</wsdl:definitions>

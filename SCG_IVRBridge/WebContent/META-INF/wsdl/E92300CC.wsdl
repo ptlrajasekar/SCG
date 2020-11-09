@@ -1,0 +1,605 @@
+<wsdl:definitions name="E92300CC" targetNamespace="file://target.files" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="file://target.files" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://ns.sempra.com/OpEx/CC/eServices/ViewCancelOrder/Request/1.0" xmlns:xsd2="http://ns.sempra.com/OpEx/CC/eServices/ViewCancelOrder/Response/1.0">
+  <wsdl:types>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/ViewCancelOrder/Request/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/ViewCancelOrder/Request/1.0">
+      <complexType name="REQUEST">
+        <sequence>
+          <element name="r300_so_mf_recv_data" type="cbl:R300_SO_MF_RECV_DATA"/>
+        </sequence>
+      </complexType>
+      <complexType name="R300_SO_MF_RECV_DATA">
+        <sequence>
+          <element form="qualified" name="r300_channel_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r300_operation_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r300_db2collname">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r300_process_date">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r300_ba_id">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r300_order_number">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r300_order_type">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r300_channel_mthd_ty">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="15"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r300_csr_userid">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="REQUEST" type="cbl:REQUEST">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">7.26.0.V200711021424</documentation>
+        </annotation>
+      </element>
+    </schema>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/ViewCancelOrder/Response/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/ViewCancelOrder/Response/1.0">
+      <complexType name="RESPONSE">
+        <sequence>
+          <element name="s300_so_mf_send_data" type="cbl:S300_SO_MF_SEND_DATA"/>
+        </sequence>
+      </complexType>
+      <complexType name="S300_SO_MF_SEND_DATA">
+        <sequence>
+          <element form="qualified" name="s300_operation_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s300_message_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s300_ba_id">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="s300_error_info" type="cbl:S300_ERROR_INFO"/>
+          <element form="qualified" name="s300_cust_nm">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="45"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="s300_view_cso_close_info" type="cbl:S300_VIEW_CSO_CLOSE_INFO"/>
+          <element name="s300_view_transfer_ton_info" type="cbl:S300_VIEW_TRANSFER_TON_INFO"/>
+          <element name="s300_cancel_info" type="cbl:S300_CANCEL_INFO"/>
+        </sequence>
+      </complexType>
+      <complexType name="S300_ERROR_INFO">
+        <sequence>
+          <element form="qualified" name="s300_sys_err_cd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s300_app_err_cd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s300_err_msg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="100"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="S300_VIEW_CSO_CLOSE_INFO">
+        <sequence>
+          <element form="qualified" name="s300_number_of_orders">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" maxOccurs="6" minOccurs="6" name="s300_order_details" type="cbl:S300_ORDER_DETAILS"/>
+        </sequence>
+      </complexType>
+      <complexType name="S300_ORDER_DETAILS">
+        <sequence>
+          <sequence>
+            <element form="qualified" name="s300_order_number">
+              <simpleType>
+                <restriction base="long">
+                  <minInclusive value="0"/>
+                  <maxInclusive value="9999999999"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s300_schedule_date">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s300_order_arrgmt_ty">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="1"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s300_order_tm_appt">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="8"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s300_order_type">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="2"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s300_req_serv_cnt">
+              <simpleType>
+                <restriction base="short">
+                  <minInclusive value="0"/>
+                  <maxInclusive value="99"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" maxOccurs="7" minOccurs="7" name="s300_req_serv_details" type="cbl:S300_REQ_SERV_DETAILS"/>
+            <element form="qualified" name="s300_stop_serv_date">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s300_access_arrgmt_cnt">
+              <simpleType>
+                <restriction base="short">
+                  <minInclusive value="0"/>
+                  <maxInclusive value="99"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" maxOccurs="6" minOccurs="6" name="s300_access_arrgmt_entry" type="cbl:S300_ACCESS_ARRGMT_ENTRY"/>
+            <element form="qualified" name="s300_addtnl_access_txt">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="53"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </sequence>
+      </complexType>
+      <complexType name="S300_REQ_SERV_DETAILS">
+        <sequence>
+          <sequence>
+            <element form="qualified" name="s300_req_serv_catg">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="1"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s300_req_serv_code">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="2"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s300_appl_otr_appl_txt">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="8"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s300_appl_inop_flg">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="1"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s300_appl_adj_flg">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="1"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </sequence>
+      </complexType>
+      <complexType name="S300_ACCESS_ARRGMT_ENTRY">
+        <sequence>
+          <sequence>
+            <element form="qualified" name="s300_acc_arrgmt_cd">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="4"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </sequence>
+      </complexType>
+      <complexType name="S300_VIEW_TRANSFER_TON_INFO">
+        <sequence>
+          <element form="qualified" name="s300_ton_ord_stat_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s300_ton_order_no">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s300_ton_serv_street_addr1">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s300_ton_serv_street_addr2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="40"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s300_ton_start_serv_date">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s300_ton_schedule_date">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s300_ton_order_arrgmt_ty">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s300_ton_order_tm_appt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s300_ton_access_arrgmt_cnt">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" maxOccurs="6" minOccurs="6" name="s300_ton_access_arrgmt_entry" type="cbl:S300_TON_ACCESS_ARRGMT_ENTRY"/>
+          <element form="qualified" name="s300_ton_addtnl_access_txt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="53"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="S300_TON_ACCESS_ARRGMT_ENTRY">
+        <sequence>
+          <sequence>
+            <element form="qualified" name="s300_ton_access_arrgmt_cd">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="4"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </sequence>
+      </complexType>
+      <complexType name="S300_CANCEL_INFO">
+        <sequence>
+          <element form="qualified" name="s300_cancel_order_number">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s300_cancellation_flag">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="RESPONSE" type="cbl:RESPONSE">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">7.26.0.V200711021424</documentation>
+        </annotation>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="viewCancelOrderRequest">
+    <wsdl:part element="xsd1:REQUEST" name="REQUESTPart"/>
+  </wsdl:message>
+  <wsdl:message name="viewCancelOrderResponse">
+    <wsdl:part element="xsd2:RESPONSE" name="RESPONSEPart"/>
+  </wsdl:message>
+  <wsdl:portType name="E92300CCPortType">
+    <wsdl:operation name="viewCancelOrder">
+      <wsdl:input message="tns:viewCancelOrderRequest" name="viewCancelOrderRequest"/>
+      <wsdl:output message="tns:viewCancelOrderResponse" name="viewCancelOrderResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="E92300CCBinding" type="tns:E92300CCPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="viewCancelOrder">
+      <soap:operation soapAction="urn:E92300CC" style="document"/>
+      <wsdl:input name="viewCancelOrderRequest">
+        <soap:body parts="REQUESTPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="viewCancelOrderResponse">
+        <soap:body parts="RESPONSEPart" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="viewCancelOrder">
+    <wsdl:port binding="tns:E92300CCBinding" name="E92300CCPort">
+      <soap:address location="https://soagwq1.sempra.com/OpEx/CC/eServices/ViewCancelOrder/1.0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

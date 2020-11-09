@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="E92662CC" targetNamespace="file://target.files" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="file://target.files" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://ns.sempra.com/OpEx/CC/eServices/HighBillInv/E92662CC/Request/1.0" xmlns:xsd2="http://ns.sempra.com/OpEx/CC/eServices/HighBillInv/E92662CC/Response/1.0">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/HighBillInv/E92662CC/Request/1.0" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/HighBillInv/E92662CC/Request/1.0">
+      <complexType name="REQUEST">
+        <sequence>
+          <element form="qualified" name="highBillInvRequest" type="cbl:highBillInvRequest"/>
+        </sequence>
+      </complexType>
+      <complexType name="highBillInvRequest">
+        <sequence>
+          <element form="qualified" name="reqOperationCd">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="channelType">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="3"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="databaseName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="baId">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="REQUEST" type="cbl:REQUEST">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">11.2.100.V20150821_1022</documentation>
+        </annotation>
+      </element>
+    </schema>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/HighBillInv/E92662CC/Response/1.0" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/HighBillInv/E92662CC/Response/1.0">
+      <complexType name="RESPONSE">
+        <sequence>
+          <element form="qualified" name="highBillInvResponse" type="cbl:highBillInvResponse"/>
+        </sequence>
+      </complexType>
+      <complexType name="highBillInvResponse">
+        <sequence>
+          <element form="qualified" name="respOperationCd">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="returnCd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="errorMsg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="100"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="applErrorCd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="systemErrorCd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="respBaId">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="highBillInvData" type="cbl:highBillInvData"/>
+        </sequence>
+      </complexType>
+      <complexType name="highBillInvData">
+        <sequence>
+          <element form="qualified" name="baStatCd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="hbiInvSw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="lppSw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="lppPaymentAmt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="lppPrevPaymentAmt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="lppAmortizationAmt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="lppAmortizationPmt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="prevBalAmt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="depReimbAmt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="depReimbInterest">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="depReimbDt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="depAmt">
+            <simpleType>
+              <restriction base="decimal">
+                <minInclusive value="-999999999.99"/>
+                <maxInclusive value="999999999.99"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="depDt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="actualBillDays">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="normalBillDays">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="estimatedUsageSw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="currentMonthUsage">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="previousMonthUsage">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="previousYearUsage">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="poolSw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="currColdWeatherDays">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="0"/>
+                <maxInclusive value="99999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="prevColdWeatherDays">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="0"/>
+                <maxInclusive value="99999"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="RESPONSE" type="cbl:RESPONSE">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">11.2.100.V20150821_1022</documentation>
+        </annotation>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="createHighBillInvRequest">
+    <wsdl:part element="xsd1:REQUEST" name="REQUESTPart"/>
+  </wsdl:message>
+  <wsdl:message name="createHighBillInvResponse">
+    <wsdl:part element="xsd2:RESPONSE" name="RESPONSEPart"/>
+  </wsdl:message>
+  <wsdl:portType name="E92662CCPortType">
+    <wsdl:operation name="createHighBillInv">
+      <wsdl:input message="tns:createHighBillInvRequest" name="createHighBillInvRequest"/>
+      <wsdl:output message="tns:createHighBillInvResponse" name="createHighBillInvResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="E92662CCBinding" type="tns:E92662CCPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createHighBillInv">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createHighBillInvRequest">
+        <soap:body parts="REQUESTPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createHighBillInvResponse">
+        <soap:body parts="RESPONSEPart" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="createHighBillInv">
+    <wsdl:port binding="tns:E92662CCBinding" name="E92662CCPort">
+      <soap:address location="https://mvs3-ftp.pacent.com:3048/OpEx/CC/eServices/HighBillInv/E92662CC/1.0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

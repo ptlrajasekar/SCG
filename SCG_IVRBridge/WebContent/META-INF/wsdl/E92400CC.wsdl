@@ -1,0 +1,1483 @@
+<wsdl:definitions name="E92400CC" targetNamespace="file://target.files" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="file://target.files" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://ns.sempra.com/OpEx/CC/eServices/CloseOrder/Request/1.0" xmlns:xsd2="http://ns.sempra.com/OpEx/CC/eServices/CloseOrder/Response/1.0">
+  <wsdl:types>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/CloseOrder/Request/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/CloseOrder/Request/1.0">
+      <complexType name="REQUEST">
+        <sequence>
+          <element name="r400_cls_mf_recv_data" type="cbl:R400_CLS_MF_RECV_DATA"/>
+        </sequence>
+      </complexType>
+      <complexType name="R400_CLS_MF_RECV_DATA">
+        <sequence>
+          <element form="qualified" name="r400_channel_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_operation_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_alt_path_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_db2collname">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_process_date">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_process_time">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_channel_mthd_ty">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="15"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_csr_userid">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_ba_id">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_email_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="80"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_csa_flag">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_pending_ton_flag">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_pending_ton_schd_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_pending_ton_bao_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="r400_close_order_oper2_info" type="cbl:R400_CLOSE_ORDER_OPER2_INFO"/>
+          <element name="r400_close_order_oper3_info" type="cbl:R400_CLOSE_ORDER_OPER3_INFO"/>
+          <element name="r400_close_order_oper4_info" type="cbl:R400_CLOSE_ORDER_OPER4_INFO"/>
+        </sequence>
+      </complexType>
+      <complexType name="R400_CLOSE_ORDER_OPER2_INFO">
+        <sequence>
+          <element form="qualified" name="r400_selected_bao_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="R400_CLOSE_ORDER_OPER3_INFO">
+        <sequence>
+          <element name="r400_requestor_info" type="cbl:R400_REQUESTOR_INFO"/>
+          <element form="qualified" name="r400_fwd_nm">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="45"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_fwd_addr_flag">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_fwd_addr_type">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="r400_domestic_addr" type="cbl:R400_DOMESTIC_ADDR"/>
+          <element name="r400_domestic_addr_split" type="cbl:R400_DOMESTIC_ADDR_SPLIT"/>
+          <element name="r400_foreign_addr" type="cbl:R400_FOREIGN_ADDR"/>
+          <element name="r400_owner_info" type="cbl:R400_OWNER_INFO"/>
+        </sequence>
+      </complexType>
+      <complexType name="R400_REQUESTOR_INFO">
+        <sequence>
+          <element form="qualified" name="r400_requestor_nm">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_requestor_phn_nbr">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_requestor_phn_extn">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="R400_DOMESTIC_ADDR">
+        <sequence>
+          <element form="qualified" name="r400_domestic_addr_ln1">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_domestic_city">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_domestic_st">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_domestic_zip">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="R400_DOMESTIC_ADDR_SPLIT">
+        <sequence>
+          <element form="qualified" name="r400_addr_da_nbr">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="6"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_addr_da_frac_nbr">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="3"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_addr_pre_drct_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_addr_street_nm">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_addr_street_ty_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_addr_post_drct_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_addr_dest_ty_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="5"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_addr_dest_txt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_addr_upob_desc">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_addr_city">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_addr_state">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_addr_zip">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_bypas_validation_flag">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="R400_FOREIGN_ADDR">
+        <sequence>
+          <element form="qualified" name="r400_foreign_addr1">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_foreign_addr2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_foreign_addr3">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="R400_OWNER_INFO">
+        <sequence>
+          <element form="qualified" name="r400_owner_name">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="45"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_owner_addr">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="45"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_owner_city">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="13"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_owner_st">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_owner_zip">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_owner_phn_nbr">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_owner_phn_extn">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="R400_CLOSE_ORDER_OPER4_INFO">
+        <sequence>
+          <element form="qualified" name="r400_cross_st">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="14"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_selected_ocs_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="r400_cls_order_info" type="cbl:R400_CLS_ORDER_INFO"/>
+        </sequence>
+      </complexType>
+      <complexType name="R400_CLS_ORDER_INFO">
+        <sequence>
+          <element name="r400_access_arrngmnt_info" type="cbl:R400_ACCESS_ARRNGMNT_INFO"/>
+          <element form="qualified" name="r400_addtnl_access_txt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="53"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="R400_ACCESS_ARRNGMNT_INFO">
+        <sequence>
+          <element form="qualified" name="r400_gate_flag">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="r400_dog_info">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="REQUEST" type="cbl:REQUEST">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">7.26.0.V200711021424</documentation>
+        </annotation>
+      </element>
+    </schema>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/CloseOrder/Response/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/CloseOrder/Response/1.0">
+      <complexType name="RESPONSE">
+        <sequence>
+          <element name="s400_cls_mf_send_data" type="cbl:S400_CLS_MF_SEND_DATA"/>
+        </sequence>
+      </complexType>
+      <complexType name="S400_CLS_MF_SEND_DATA">
+        <sequence>
+          <element form="qualified" name="s400_operation_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_message_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="s400_info_cd" type="cbl:S400_INFO_CD"/>
+          <element name="s400_error_info" type="cbl:S400_ERROR_INFO"/>
+          <element form="qualified" name="s400_alt_path_id">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_ba_id">
+            <simpleType>
+              <restriction base="long">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="s400_close_order_oper1_info" type="cbl:S400_CLOSE_ORDER_OPER1_INFO"/>
+          <element name="s400_close_order_oper2_info" type="cbl:S400_CLOSE_ORDER_OPER2_INFO"/>
+          <element name="s400_close_order_oper3_info" type="cbl:S400_CLOSE_ORDER_OPER3_INFO"/>
+          <element name="s400_close_order_oper4_info" type="cbl:S400_CLOSE_ORDER_OPER4_INFO"/>
+        </sequence>
+      </complexType>
+      <complexType name="S400_INFO_CD">
+        <sequence>
+          <element form="qualified" name="s400_info_cd_2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_info_cd_4">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="S400_ERROR_INFO">
+        <sequence>
+          <element form="qualified" name="s400_sys_err_cd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_app_err_cd">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="-999999"/>
+                <maxInclusive value="999999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_err_msg">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="100"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="S400_CLOSE_ORDER_OPER1_INFO">
+        <sequence>
+          <element name="s400_cust_info" type="cbl:S400_CUST_INFO"/>
+          <element form="qualified" name="s400_csa_flag">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_pending_ton_flag">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_pending_ton_schd_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_pending_ton_bao_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" maxOccurs="31" minOccurs="31" name="s400_off_calendar" type="cbl:S400_OFF_CALENDAR"/>
+          <element form="qualified" name="s400_selected_bao_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_owner_info_flag">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="S400_CUST_INFO">
+        <sequence>
+          <element form="qualified" name="s400_cust_nm">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="45"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_serv_da_nbr">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="6"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_serv_da_frac_nbr">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="3"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_serv_pre_drct_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_serv_street_nm">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_serv_street_ty_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_serv_post_drct_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_serv_dest_ty_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="5"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_serv_dest_txt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_serv_city">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_serv_state">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_serv_addr_zip">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_cross_st">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="14"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="S400_OFF_CALENDAR">
+        <sequence>
+          <sequence>
+            <element form="qualified" name="s400_off_calendar_dt">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s400_open_close_flag">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="1"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </sequence>
+      </complexType>
+      <complexType name="S400_CLOSE_ORDER_OPER2_INFO">
+        <sequence>
+          <element form="qualified" maxOccurs="31" minOccurs="31" name="s400_ocs_calendar" type="cbl:S400_OCS_CALENDAR"/>
+          <element form="qualified" name="s400_selected_ocs_dt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_fwd_nm">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="45"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_fwd_addr_type">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="s400_domestic_addr" type="cbl:S400_DOMESTIC_ADDR"/>
+          <element name="s400_foreign_addr" type="cbl:S400_FOREIGN_ADDR"/>
+        </sequence>
+      </complexType>
+      <complexType name="S400_OCS_CALENDAR">
+        <sequence>
+          <sequence>
+            <element form="qualified" name="s400_ocs_calendar_dt">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element form="qualified" name="s400_all_day_wnd_wndw">
+              <annotation>
+                <appinfo source="http://www.wsadie.com/appinfo">
+                  <initialValue kind="SPACE"/>
+                </appinfo>
+              </annotation>
+              <simpleType>
+                <restriction base="string">
+                  <maxLength value="1"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </sequence>
+      </complexType>
+      <complexType name="S400_DOMESTIC_ADDR">
+        <sequence>
+          <element form="qualified" name="s400_domestic_addr_ln1">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_domestic_city">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_domestic_st">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_domestic_zip">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="S400_FOREIGN_ADDR">
+        <sequence>
+          <element form="qualified" name="s400_foreign_addr_ln1">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_foreign_addr_ln2">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_foreign_addr_ln3">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="50"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="S400_CLOSE_ORDER_OPER3_INFO">
+        <sequence>
+          <element form="qualified" name="s400_grp1_status">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="s400_grp1_recomnd_addr" type="cbl:S400_GRP1_RECOMND_ADDR"/>
+        </sequence>
+      </complexType>
+      <complexType name="S400_GRP1_RECOMND_ADDR">
+        <sequence>
+          <element form="qualified" name="s400_grp1_da_nbr">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="6"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_grp1_da_frac_nbr">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="3"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_grp1_pre_drct_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_grp1_street_nm">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_grp1_street_ty_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_grp1_post_drct_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_grp1_dest_ty_cd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="5"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_grp1_dest_txt">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_grp1_upob_desc">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_grp1_city">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="30"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_grp1_state">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_grp1_zip">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="s400_bypas_validation_flag">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="S400_CLOSE_ORDER_OPER4_INFO">
+        <sequence>
+          <element form="qualified" name="s400_confirmation_nbr">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="RESPONSE" type="cbl:RESPONSE">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">7.26.0.V200711021424</documentation>
+        </annotation>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="createCloseOrderRequest">
+    <wsdl:part element="xsd1:REQUEST" name="REQUESTPart"/>
+  </wsdl:message>
+  <wsdl:message name="createCloseOrderResponse">
+    <wsdl:part element="xsd2:RESPONSE" name="RESPONSEPart"/>
+  </wsdl:message>
+  <wsdl:portType name="E92400CCPortType">
+    <wsdl:operation name="createCloseOrder">
+      <wsdl:input message="tns:createCloseOrderRequest" name="createCloseOrderRequest"/>
+      <wsdl:output message="tns:createCloseOrderResponse" name="createCloseOrderResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="E92400CCBinding" type="tns:E92400CCPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createCloseOrder">
+      <soap:operation soapAction="urn:E92400CC" style="document"/>
+      <wsdl:input name="createCloseOrderRequest">
+        <soap:body parts="REQUESTPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createCloseOrderResponse">
+        <soap:body parts="RESPONSEPart" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="createCloseOrder">
+    <wsdl:port binding="tns:E92400CCBinding" name="E92400CCPort">
+      <soap:address location="https://soagwq1.sempra.com/OpEx/CC/eServices/CloseOrder/1.0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

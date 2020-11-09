@@ -1,0 +1,119 @@
+<!-- $Log: RestrictedXSDDatatypes.xsd $ Revision 1.2 2013/03/20 17:20:15IST 
+	Raveendran, Jayakrishnan (JRaveend) Revision 1.1 2012/11/16 00:40:44IST Nair, 
+	Gopakumar A (GANair) Initial revision Member added to project f:/MKS/SCGSI/IContactService/IContactShared/Source/wsdl/schemas/project.pj 
+	Revision 1.1 2012/11/13 14:39:55PST Nair, Gopakumar A (GANair) Initial revision 
+	Member added to project f:/MKS/CustomerCareSharedServices/SCG_iContactService/Shared/wsdl/schemas/project.pj 
+	Revision 1.1 2012/10/09 10:57:13PDT Nair, Gopakumar A (GANair) Initial revision 
+	Member added to project f:/MKS/CustomerCareSharedServices/iContactService/WebService/WebContent/WEB-INF/wsdl/schemas/project.pj 
+	Revision 1.1 2011/06/22 09:14:26PDT SKNair Initial revision Member added 
+	to project f:/MKS/CustomerCareSharedServices/SublevelSecurity/service/WebContent/WEB-INF/wsdl/schemas/project.pj 
+	Revision 1.1 2011/06/10 13:40:17PDT Samuel, Finny (fsamuel) Initial revision 
+	Member added to project f:/MKS/CustomerCareSharedServices/SublevelSecurityService/WebContent/WEB-INF/wsdl/schemas/project.pj 
+	Revision 1.1 2010/09/24 13:57:04PDT Jayakumar, Jayakrishnan (JJayakum) Initial 
+	revision Member added to project f:/MKS/CustomerCareSharedServices/CommonEventLogging/code/Services/EventLogging/WebContent/WEB-INF/wsdl/schemas/project.pj 
+	Revision 1.1 2010/03/02 06:45:56PST Lee, Francis (TP2FXL) Initial revision 
+	Member added to project f:/MKS/Enterprise_Integration_Management/Enterprise_Integration_Management.pj 
+	Revision 1.2 2009/08/13 17:26:05EDT Masser-Frye, David (DmasserF) resync 
+	with http://ns.sempra.com Revision 1.2 2009/07/29 08:56:35PDT Vembu, Sundar 
+	(SVembu) Fixed the space for the datatype WorkTaskSequenceNumberType // -->
+<xs:schema
+	xmlns="http://ns.sempra.com/im/BusinessTechnology/Common/Datatypes/RestrictedXSDDatatypes"
+	xmlns:rxs="http://ns.sempra.com/im/BusinessTechnology/Common/Datatypes/RestrictedXSDDatatypes"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+	targetNamespace="http://ns.sempra.com/im/BusinessTechnology/Common/Datatypes/RestrictedXSDDatatypes"
+	version="1.0">
+	<xs:simpleType name="WorkNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="12" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonFirstNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonLastNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SSNString">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{3}-[0-9]{2}-[0-9]{4}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmailType">
+		<xs:restriction base="xs:string">
+			<xs:pattern
+				value="[A-Za-z0-9!#-'\*\+\-/=\?\^_`\{-~]+(\.[A-Za-z0-9!#-'\*\+\-/=\?\^_`\{-~]+)*@[A-Za-z0-9!#-'\*\+\-/=\?\^_`\{-~]+(\.[A-Za-z0-9!#-'\*\+\-/=\?\^_`\{-~]+)*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LanIDType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="32" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="wsString">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonnelNumberType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="8" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WorkTaskSequenceNumberType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="9" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonMiddleNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonSuffixType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="6" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonFullNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="99" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="JobTitleType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonPreferredNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="JobCodeType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="8" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OrganizationCodeType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="12" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="E93520CC" targetNamespace="file://target.files" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="file://target.files" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://ns.sempra.com/OpEx/CC/eServices/getPaperlessPromoElig/Request/1.0" xmlns:xsd2="http://ns.sempra.com/OpEx/CC/eServices/getPaperlessPromoElig/Response/1.0">
+  <wsdl:types>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/getPaperlessPromoElig/Request/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/getPaperlessPromoElig/Request/1.0">
+      <complexType name="PaperlessPromoEligRequest">
+        <sequence>
+          <element form="qualified" name="processCode">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="db2CollName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="cisVersion">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="wacID">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="RequestMessage" type="cbl:PaperlessPromoEligRequest">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">8.1.0.V200810141930</documentation>
+        </annotation>
+      </element>
+    </schema>
+    <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/getPaperlessPromoElig/Response/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/getPaperlessPromoElig/Response/1.0">
+      <complexType name="PaperlessPromoEligResponse">
+        <sequence>
+          <element form="qualified" name="processCode">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="returnCode">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="wacID">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="acctCnt">
+            <simpleType>
+              <restriction base="int">
+                <minInclusive value="0"/>
+                <maxInclusive value="99999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="acctDetail_num">
+            <simpleType>
+              <restriction base="short">
+                <minInclusive value="0"/>
+                <maxInclusive value="9999"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" maxOccurs="250" minOccurs="1" name="acctDetail" type="cbl:acctDetail">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <dependingOn>//@eTypes/@eExtensibilityElements.1/@schema/PaperlessPromoEligResponse;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4/acctDetail_num;XSDElementDeclaration</dependingOn>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="acctDetail">
+        <sequence>
+          <element form="qualified" name="acctNum">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="eligSw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="eligReason">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="20"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="ResponseMessage" type="cbl:PaperlessPromoEligResponse">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">8.1.0.V200810141930</documentation>
+        </annotation>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="getPaperlessPromoEligRequest">
+    <wsdl:part element="xsd1:RequestMessage" name="PaperlessPromoEligRequestPart"/>
+  </wsdl:message>
+  <wsdl:message name="getPaperlessPromoEligResponse">
+    <wsdl:part element="xsd2:ResponseMessage" name="PaperlessPromoEligResponsePart"/>
+  </wsdl:message>
+  <wsdl:portType name="E93520CCPortType">
+    <wsdl:operation name="getPaperlessPromoElig">
+      <wsdl:input message="tns:getPaperlessPromoEligRequest" name="getPaperlessPromoEligRequest"/>
+      <wsdl:output message="tns:getPaperlessPromoEligResponse" name="getPaperlessPromoEligResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="E93520CCBinding" type="tns:E93520CCPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getPaperlessPromoElig">
+      <soap:operation soapAction="urn:E93520CC" style="document"/>
+      <wsdl:input name="getPaperlessPromoEligRequest">
+        <soap:body parts="PaperlessPromoEligRequestPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPaperlessPromoEligResponse">
+        <soap:body parts="PaperlessPromoEligResponsePart" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getPaperlessPromoElig">
+    <wsdl:port binding="tns:E93520CCBinding" name="E93520CCPort">
+      <soap:address location="https://mvs3-ftp.pacent.com:3048/OpEx/CC/eServices/getPaperlessPromoElig/1.0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

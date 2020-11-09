@@ -1,0 +1,26 @@
+<xs:schema
+	xmlns:emf="http://ns.sempra.com/im/BusinessTechnology/Common/EMFSchemaV2"
+	xmlns:tns="http://ns.sempra.com/im/BusinessTechnology/Common/CustomerContact/ContactResponse/ContactResponseV1"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified"
+	elementFormDefault="qualified"
+	targetNamespace="http://ns.sempra.com/im/BusinessTechnology/Common/CustomerContact/ContactResponse/ContactResponseV1"
+	version="1.2">
+	<xs:import
+		namespace="http://ns.sempra.com/im/BusinessTechnology/Common/EMFSchemaV2"
+		schemaLocation="./EMFSchemaV2.xsd" />
+	<xs:element name="CustomerContactResponseMessage" type="tns:CustomerContactResponseMessage" />
+	<xs:complexType name="CustomerContactResponseMessage">
+		<xs:sequence>
+			<xs:element name="MessagePayloadResponse" type="tns:MessagePayloadResponse" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MessagePayloadResponse" type="tns:MessagePayloadResponse" />
+	<xs:complexType name="MessagePayloadResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="campaignId" type="xs:string" />
+			<xs:element name="templateId" type="xs:string" />
+			<xs:element name="emailCode" type="xs:string" />
+			<xs:element name="Event" type="emf:Event_Type" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

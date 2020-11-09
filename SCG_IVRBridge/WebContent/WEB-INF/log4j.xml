@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!--  threshold=error will turn on ERROR logging and debug=true will turn on DEBUG logging -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" threshold="error">
+  
+<appender name="FILE" class="org.apache.log4j.RollingFileAppender">
+    <param name="File" value="${user-home}/${application-name}.log"/>
+    <param name="MaxFileSize" value="25MB"/>
+    <param name="MaxBackupIndex" value="10"/>
+    <layout class="org.apache.log4j.PatternLayout">
+        <param name="ConversionPattern" value="%d{DATE} %p: %c:: %m%n"/>
+    </layout>
+</appender> 
+
+<root>
+    <level value="DEBUG"/>
+    <appender-ref ref="FILE"/>    
+</root> 
+    
+</log4j:configuration>

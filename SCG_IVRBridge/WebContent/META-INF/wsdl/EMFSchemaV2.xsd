@@ -1,0 +1,247 @@
+<!-- edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by Francis 
+	Lee (Sempra Utilities) -->
+<xs:schema
+	xmlns="http://ns.sempra.com/im/BusinessTechnology/Common/EMFSchemaV2"
+	xmlns:rxs="http://ns.sempra.com/im/BusinessTechnology/Common/Datatypes/RestrictedXSDDatatypes"
+	xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	targetNamespace="http://ns.sempra.com/im/BusinessTechnology/Common/EMFSchemaV2">
+	<xs:import namespace="http://schemas.xmlsoap.org/soap/envelope/"
+		schemaLocation="./SOAPEnvelope.xsd" />
+	<xs:import
+		namespace="http://ns.sempra.com/im/BusinessTechnology/Common/Datatypes/RestrictedXSDDatatypes"
+		schemaLocation="./RestrictedXSDDatatypes.xsd" />
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+			EMFSchema for Sempra.Copyright 2009 Sempra. All rights reserved. Version
+			V2:namespace is changed to use im instead of ws to make it consistent
+			with schema namespace standard.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="Acknowledgement_Type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				The Acknowledgement Type is used to return a response to a source
+				system. The current EMFHeader will be returned.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="emfHeader" type="EMFHeader_Type" />
+			<xs:element name="eventLog" type="Event_Type" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Acknowledgement" type="Acknowledgement_Type" />
+	<xs:complexType name="EMFHeader_Type">
+		<xs:sequence>
+			<xs:element name="requester" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Each system that processes the message will set the requestor field in
+						order to identify itself.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="transactionID" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						The transaction id is a unique identifier for the transaction. A
+						Version 4 UUID is the prefered value for this field. Each system
+						that processes the message will fill in this field with its own
+						unique identifier. This identifier will be set once and used for
+						the duration of the transaction.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="requestID" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						The request id is a unique identifier for the global transaction. A
+						Version 4 UUID is the prefered value for this field. The system
+						that first creates the message will fill in this field with its
+						unique identifier. This identifier will be set once and used for
+						the duration of the global transaction.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="timestamp" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Each system that processes the message will set this field to the
+						current date and time.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="originatingSystem" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This field is set once and used for the duration of the global
+						transaction. .
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="orignatingSentTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This field is set once and used for the duration of the global
+						transaction. This field is set to the current date and time when
+						the message is first created.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceName" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This field is used to identify the service that will be invoked. This
+						is set one time by the system that first creates the message.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="operationName" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This field is used to identify the operation on a service that will be
+						invoked. This is set one time by the system that first creates the
+						message.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="sequenceNumber" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						In some cases records must be processed in a specific order. This
+						number is used to determine where the message falls in the order.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="recordID" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This field is used to identify the record that has failed.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute ref="s:mustUnderstand" use="optional" />
+		<xs:attribute ref="s:actor" use="optional" />
+	</xs:complexType>
+	<xs:element name="EMFHeader" type="EMFHeader_Type" />
+	<xs:complexType name="Event_Type">
+		<xs:sequence>
+			<xs:element name="result" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This field is used to identify the operation on a service that will be
+						invoked. This is set one time by the system that first creates the
+						message.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="creationTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This is the date and time when this record is created.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="description" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">This is a general
+						description of the event.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Error" type="Error_Type" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Event" type="Event_Type" />
+	<xs:complexType name="Error_Type">
+		<xs:sequence>
+			<xs:element name="errorCode" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">This is an error code
+						for the problem.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="reason" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">This is short
+						description of the problem.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="details" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">This is detailed
+						description of the problem.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="stackTrace" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						For java based system, a problem tends to generate an Exception.
+						Associated with an exception is a stack trace. This is a copy of
+						the stack trace. For other systems, this is a detailed technical
+						reason why the failure occurred.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="recordID" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This field is used to identify the record that has failed.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Location" type="Location_Type" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Error" type="Error_Type" />
+	<xs:complexType name="Location_Type">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Component" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">This field is used to
+						identify a component.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Function" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This field is used to identify the component's function.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Location" type="Location_Type" />
+	<xs:complexType name="BasicAcknowledgement_Type">
+		<xs:sequence>
+			<xs:element name="statusCode" type="StatusType">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This field is used to identify status of requested transaction.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ackTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This is the date and time when this acknowlegement is created.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="notes" type="rxs:wsString">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This is a general notes about transaction acknowledgement.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="StatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FAILURE" />
+			<xs:enumeration value="SUCCESS" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="BasicAcknowledgement" type="BasicAcknowledgement_Type" />
+</xs:schema>

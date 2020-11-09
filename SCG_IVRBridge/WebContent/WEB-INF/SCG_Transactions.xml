@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<TransactionList>
+    <ProcedureInfo name="GEN_GET_APPCFG">
+        <DBName>ivr</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>0</REQUESTINPUT>
+        <REQUESTOUTPUT>20</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>ivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/GEN_GET_APPCFG.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="GET_EVENT_LIST_INFO">
+        <DBName>ivr</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>2</REQUESTINPUT>
+        <REQUESTOUTPUT>1</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>ivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/GET_EVENT_LIST_INFO.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>	
+    <ProcedureInfo name="GET_APL">
+        <DBName>ivr</DBName>
+        <RETURNCURSOR>yes</RETURNCURSOR>
+        <REQUESTINPUT>1</REQUESTINPUT>
+        <REQUESTOUTPUT>16</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>ivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/GET_APL.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="GET_CSR_WKLY_SCHD">
+        <DBName>ivr</DBName>
+        <RETURNCURSOR>yes</RETURNCURSOR>
+        <REQUESTINPUT>1</REQUESTINPUT>
+        <REQUESTOUTPUT>11</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>ivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/GET_CSR_WKLY_SCHD.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="GET_PATH_CODE">
+        <DBName>ivr</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>1</REQUESTINPUT>
+        <REQUESTOUTPUT>4</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>ivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/GET_PATH_CODE.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="INSERT_RMS_DATA">
+        <DBName>ivr</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>20</REQUESTINPUT>
+        <REQUESTOUTPUT>1</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>ivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/INSERT_RMS_DATA.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="INSERT_RMS_LOC">
+        <DBName>ivr</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>23</REQUESTINPUT>
+        <REQUESTOUTPUT>1</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>ivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/INSERT_RMS_LOC.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="maximo.MAXIMO_IVR_SET">
+        <DBName>map1</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>1</REQUESTINPUT>
+        <REQUESTOUTPUT>2</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>map1</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/MAXIMO_IVR_SET.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="SP_GET_GAF">
+        <DBName>ivr</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>1</REQUESTINPUT>
+        <REQUESTOUTPUT>2</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>ivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/SP_GET_GAF.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="SP_GET_LIHEAP">
+        <DBName>ivr</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>1</REQUESTINPUT>
+        <REQUESTOUTPUT>2</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>ivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/SP_GET_LIHEAP.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="SP_GVP_HOLIDAY_LKUP">
+        <DBName>ivr</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>1</REQUESTINPUT>
+        <REQUESTOUTPUT>4</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>ivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/SP_GVP_HOLIDAY_LKUP.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="UPDATE_CARE_LANG">
+        <DBName>scgivr</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>2</REQUESTINPUT>
+        <REQUESTOUTPUT>1</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>scgivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/UPDATE_CARE_LANG.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="UPDATE_RESULT_CODE">
+        <DBName>scgivr</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>3</REQUESTINPUT>
+        <REQUESTOUTPUT>1</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>scgivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/UPDATE_RESULT_CODE.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="SCG_IVR_COLLECTIONS_CALLBACK">
+        <DBName>scgivr</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>1</REQUESTINPUT>
+        <REQUESTOUTPUT>3</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>scgivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/IVR_COLLECTIONS_CALLBACK.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="SP_GET_CB_INFO">
+        <DBName>scgivr</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>1</REQUESTINPUT>
+        <REQUESTOUTPUT>8</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>scgivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/SP_GET_CB_INFO.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <ProcedureInfo name="SCG_IVR_COLLECTIONS_SET_CB_3">
+        <DBName>scgivr</DBName>
+        <RETURNCURSOR>no</RETURNCURSOR>
+        <REQUESTINPUT>1</REQUESTINPUT>
+        <REQUESTOUTPUT>2</REQUESTOUTPUT>
+        <Pooling>TRUE</Pooling>
+        <DatabaseToPool>scgivr</DatabaseToPool>
+        <CheckTiming>FALSE</CheckTiming>
+        <WaitTime>500</WaitTime>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/IVR_COLLECTIONS_SET_CB_3.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </ProcedureInfo>
+    <webservice name="E92200CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/CustomerServiceOrder/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/CustomerServiceOrder.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E92300CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/ViewCancelOrder/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/ViewCancelOrder.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E92400CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/CloseOrder/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/CloseOrder.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E92600CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/BillingFunctions/E92600CC/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/BillingFunctions.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E92630CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/PaymentFunctions/E92630CC/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/PaymentFunctions.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E92640CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/CareFunctions/E92640CC/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/CareFunctions.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E92650CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/CustReadFunctions/E92650CC/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/CustReadFunctions.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E92660CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/ScreenPop/E92660CC/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/ScreenPop.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E92665CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/Eservices/TailoredTreatments/E92665CC/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/TailoredTreatments.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E92670CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/Priorities/E92670CC/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/Priorities.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E92680CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/CreatePaymentMemoPost/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/CreatePaymentMemoPost.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E92685CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/GetPaymentMemoPost/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/GetPaymentMemoPost.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E92800CC">
+        <WSDLURL>https://soagw.sempra.com/eServices/OpEx/PaymentExtension/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/PaymentExtension.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E93515CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/updateCustomerProfile/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/updateCustomerProfile.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E93570CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/getBillAcctInfo/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/getBillAcctInfo.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="EW0100CC">
+        <WSDLURL>https://soagw.sempra.com/scg/ws/Bill/EPMobileBillData_V1</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/scgBillAnalyzer.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="BILLANALYZER">
+        <WSDLURL>https://soagw.sempra.com/scg/ws/CustomerManagement/Billing/CustomerInformationServiceV1</WSDLURL>
+        <WSDLURL1>https://soagw.sempra.com/scg/ws/Bill/Mobile_EP</WSDLURL1>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <AccessKey>5e7a6e755c467b2b5e287b7333684852</AccessKey>
+        <ReferrerID>101</ReferrerID>
+        <timeout>10</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/scgBillAnalyzer.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="EW0300CC">
+        <WSDLURL>https://soagw.sempra.com/ew03/ew0300cc_V1</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/scgUpdateSVOC.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+	<webservice name="E92661CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/AuthenticateAni/E92661CC/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/scgAuthenticateANI.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+	<webservice name="E92662CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/HighBillInv/E92662CC/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/scgHighBillInv.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E93560CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/getLinkedAccount/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/scgGetLinkedAccts.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="CustomerContactService">
+        <WSDLURL>https://soagw.sempra.com/ws/BusinessTechnology/Common/CustomerContact/CustomerContactServiceV1</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/scgOnDemandEmail.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E93520CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/getPaperlessPromoElig/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/getPaperlessPromoElig.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+    <webservice name="E93540CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/updatePaperlessPromoEnroll/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/updatePaperlessPromoEnroll.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+	 <webservice name="E92663CC">
+        <WSDLURL>https://soagw.sempra.com/OpEx/CC/eServices/ReconnectAmount/E92663CC/1.0</WSDLURL>
+        <SOAPuid>scg_ice_ivr</SOAPuid>
+        <SOAPpwd>tEthUre#</SOAPpwd>
+        <DBName>E60P000</DBName>
+        <timeout>5</timeout>
+        <LogFile>/app/genesys/gcti/apache-tomcat-7.0.67/webapps/SCG_IVRBridge/DEBUGLOGS/createReconnectAmount.log</LogFile>
+        <LogFileSize>25MB</LogFileSize>
+        <LoggingLevel>ERROR</LoggingLevel>
+    </webservice>
+
+</TransactionList>

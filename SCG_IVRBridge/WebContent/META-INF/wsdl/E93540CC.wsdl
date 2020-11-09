@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="E93540CC" targetNamespace="file://target.files" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="file://target.files" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://ns.sempra.com/OpEx/CC/eServices/updatePaperlessPromoEnroll/Request/1.0" xmlns:xsd2="http://ns.sempra.com/OpEx/CC/eServices/updatePaperlessPromoEnroll/Response/1.0">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/updatePaperlessPromoEnroll/Request/1.0" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/updatePaperlessPromoEnroll/Request/1.0">
+      <complexType name="PaperlessPromoEnrollRequest">
+        <sequence>
+          <element form="qualified" name="processCode">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="db2CollName">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="cisVersion">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="8"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="accountNumber">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="userId">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="64"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="userTy">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="paperLessSrcCd">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="email">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="80"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="RequestMessage" type="cbl:PaperlessPromoEnrollRequest">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">11.2.100.V20171205_0606</documentation>
+        </annotation>
+      </element>
+    </schema>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ns.sempra.com/OpEx/CC/eServices/updatePaperlessPromoEnroll/Response/1.0" xmlns:cbl="http://ns.sempra.com/OpEx/CC/eServices/updatePaperlessPromoEnroll/Response/1.0">
+      <complexType name="PaperlessPromoEnrollResponse">
+        <sequence>
+          <element form="qualified" name="processCode">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="4"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="returnCode">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="2"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="acctNum">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="10"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element form="qualified" name="successSw">
+            <annotation>
+              <appinfo source="http://www.wsadie.com/appinfo">
+                <initialValue kind="SPACE"/>
+              </appinfo>
+            </annotation>
+            <simpleType>
+              <restriction base="string">
+                <maxLength value="1"/>
+                <whiteSpace value="collapse"/>
+              </restriction>
+            </simpleType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="ResponseMessage" type="cbl:PaperlessPromoEnrollResponse">
+        <annotation>
+          <documentation source="com.ibm.etools.xmlent.batch">11.2.100.V20171205_0606</documentation>
+        </annotation>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="updatePaperlessPromoEnrollRequest">
+    <wsdl:part element="xsd1:RequestMessage" name="PaperlessPromoEnrollRequestPart"/>
+  </wsdl:message>
+  <wsdl:message name="updatePaperlessPromoEnrollResponse">
+    <wsdl:part element="xsd2:ResponseMessage" name="PaperlessPromoEnrollResponsePart"/>
+  </wsdl:message>
+  <wsdl:portType name="E93540CCPortType">
+    <wsdl:operation name="updatePaperlessPromoEnroll">
+      <wsdl:input message="tns:updatePaperlessPromoEnrollRequest" name="updatePaperlessPromoEnrollRequest"/>
+      <wsdl:output message="tns:updatePaperlessPromoEnrollResponse" name="updatePaperlessPromoEnrollResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="E93540CCBinding" type="tns:E93540CCPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="updatePaperlessPromoEnroll">
+      <soap:operation soapAction="urn:E93540CC" style="document"/>
+      <wsdl:input name="updatePaperlessPromoEnrollRequest">
+        <soap:body parts="PaperlessPromoEnrollRequestPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updatePaperlessPromoEnrollResponse">
+        <soap:body parts="PaperlessPromoEnrollResponsePart" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="updatePaperlessPromoEnroll">
+    <wsdl:port binding="tns:E93540CCBinding" name="E93540CCPort">
+      <soap:address location="https://mvs3-ftp.pacent.com:3048/OpEx/CC/eServices/updatePaperlessPromoEnroll/1.0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
